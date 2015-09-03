@@ -1,0 +1,1391 @@
+{
+   "label": "AnnualContractInput",
+   "items": [
+      {
+         "name": "Bookings",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 264,
+               "period": 1
+            },
+            {
+               "value": 276,
+               "period": 2
+            },
+            {
+               "value": 294,
+               "period": 3
+            },
+            {
+               "value": 312,
+               "period": 4
+            },
+            {
+               "value": 324,
+               "period": 5
+            },
+            {
+               "value": 348,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "AverageACV",
+         "values": [
+            {
+               "value": null,
+               "period": 0
+            },
+            {
+               "value": 6600,
+               "period": 1
+            },
+            {
+               "value": 6571,
+               "period": 2
+            },
+            {
+               "value": 6837,
+               "period": 3
+            },
+            {
+               "value": 6783,
+               "period": 4
+            },
+            {
+               "value": 6750,
+               "period": 5
+            },
+            {
+               "value": 6692,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "AverageContractTerm",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 1.3,
+               "period": 1
+            },
+            {
+               "value": 1.4,
+               "period": 2
+            },
+            {
+               "value": 1.4,
+               "period": 3
+            },
+            {
+               "value": 1.5,
+               "period": 4
+            },
+            {
+               "value": 1.4,
+               "period": 5
+            },
+            {
+               "value": 1.6,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "AverageMonthUpfront",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 5.5,
+               "period": 1
+            },
+            {
+               "value": 7,
+               "period": 2
+            },
+            {
+               "value": 5,
+               "period": 3
+            },
+            {
+               "value": 6.5,
+               "period": 4
+            },
+            {
+               "value": 5.8,
+               "period": 5
+            },
+            {
+               "value": 6.2,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ARPAAverageMRR",
+         "values": [
+            {
+               "value": null,
+               "period": 0
+            },
+            {
+               "value": 550,
+               "period": 1
+            },
+            {
+               "value": 547.6,
+               "period": 2
+            },
+            {
+               "value": 569.8,
+               "period": 3
+            },
+            {
+               "value": 565.3,
+               "period": 4
+            },
+            {
+               "value": 562.5,
+               "period": 5
+            },
+            {
+               "value": 557.7,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ARPAAcrossInstall",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 514.4,
+               "period": 1
+            },
+            {
+               "value": 521,
+               "period": 2
+            },
+            {
+               "value": 529.5,
+               "period": 3
+            },
+            {
+               "value": 537.9,
+               "period": 4
+            },
+            {
+               "value": 551.7,
+               "period": 5
+            },
+            {
+               "value": 561.8,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NewACV",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 264,
+               "period": 1
+            },
+            {
+               "value": 276,
+               "period": 2
+            },
+            {
+               "value": 294,
+               "period": 3
+            },
+            {
+               "value": 312,
+               "period": 4
+            },
+            {
+               "value": 324,
+               "period": 5
+            },
+            {
+               "value": 348,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ChurnACV",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": -100.8,
+               "period": 1
+            },
+            {
+               "value": -134.6,
+               "period": 2
+            },
+            {
+               "value": -108.3,
+               "period": 3
+            },
+            {
+               "value": -107.4,
+               "period": 4
+            },
+            {
+               "value": -106.2,
+               "period": 5
+            },
+            {
+               "value": -106.1,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ExpansionACV",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 24,
+               "period": 1
+            },
+            {
+               "value": 29.9,
+               "period": 2
+            },
+            {
+               "value": 25.8,
+               "period": 3
+            },
+            {
+               "value": 16.1,
+               "period": 4
+            },
+            {
+               "value": 83.9,
+               "period": 5
+            },
+            {
+               "value": 41.2,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NetNewACV",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 187.2,
+               "period": 1
+            },
+            {
+               "value": 171.3,
+               "period": 2
+            },
+            {
+               "value": 211.5,
+               "period": 3
+            },
+            {
+               "value": 220.7,
+               "period": 4
+            },
+            {
+               "value": 301.6,
+               "period": 5
+            },
+            {
+               "value": 283.2,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "StartingArr",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 4800,
+               "period": 1
+            },
+            {
+               "value": 4987,
+               "period": 2
+            },
+            {
+               "value": 5158,
+               "period": 3
+            },
+            {
+               "value": 5369,
+               "period": 4
+            },
+            {
+               "value": 5590,
+               "period": 5
+            },
+            {
+               "value": 5892,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "EndingArr",
+         "values": [
+            {
+               "value": 4800,
+               "period": 0
+            },
+            {
+               "value": 4987,
+               "period": 1
+            },
+            {
+               "value": 5158,
+               "period": 2
+            },
+            {
+               "value": 5369,
+               "period": 3
+            },
+            {
+               "value": 5590,
+               "period": 4
+            },
+            {
+               "value": 5892,
+               "period": 5
+            },
+            {
+               "value": 6175,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "TotalNumCustomers",
+         "values": [
+            {
+               "value": 792,
+               "period": 0
+            },
+            {
+               "value": 808,
+               "period": 1
+            },
+            {
+               "value": 825,
+               "period": 2
+            },
+            {
+               "value": 845,
+               "period": 3
+            },
+            {
+               "value": 866,
+               "period": 4
+            },
+            {
+               "value": 890,
+               "period": 5
+            },
+            {
+               "value": 916,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NumNewCustomers",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 40,
+               "period": 1
+            },
+            {
+               "value": 42,
+               "period": 2
+            },
+            {
+               "value": 43,
+               "period": 3
+            },
+            {
+               "value": 46,
+               "period": 4
+            },
+            {
+               "value": 48,
+               "period": 5
+            },
+            {
+               "value": 52,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NumChurnCustomers",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": -24,
+               "period": 1
+            },
+            {
+               "value": -25,
+               "period": 2
+            },
+            {
+               "value": -23,
+               "period": 3
+            },
+            {
+               "value": -25,
+               "period": 4
+            },
+            {
+               "value": -24,
+               "period": 5
+            },
+            {
+               "value": -26,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NetNewCustomers",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 16,
+               "period": 1
+            },
+            {
+               "value": 17,
+               "period": 2
+            },
+            {
+               "value": 20,
+               "period": 3
+            },
+            {
+               "value": 21,
+               "period": 4
+            },
+            {
+               "value": 24,
+               "period": 5
+            },
+            {
+               "value": 26,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "PercentCustomerChurn",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 0.0303,
+               "period": 1
+            },
+            {
+               "value": 0.0309,
+               "period": 2
+            },
+            {
+               "value": 0.0279,
+               "period": 3
+            },
+            {
+               "value": 0.0296,
+               "period": 4
+            },
+            {
+               "value": 0.0277,
+               "period": 5
+            },
+            {
+               "value": 0.0292,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "PercentACVChurn",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 2.1,
+               "period": 1
+            },
+            {
+               "value": 2.7,
+               "period": 2
+            },
+            {
+               "value": 2.1,
+               "period": 3
+            },
+            {
+               "value": 2,
+               "period": 4
+            },
+            {
+               "value": 1.9,
+               "period": 5
+            },
+            {
+               "value": 1.8,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "PercentACVExpansion",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 0.5,
+               "period": 1
+            },
+            {
+               "value": 0.6,
+               "period": 2
+            },
+            {
+               "value": 0.5,
+               "period": 3
+            },
+            {
+               "value": 0.3,
+               "period": 4
+            },
+            {
+               "value": 1.5,
+               "period": 5
+            },
+            {
+               "value": 0.7,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "PercentNetACVChurn",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 1.6,
+               "period": 1
+            },
+            {
+               "value": 2.1,
+               "period": 2
+            },
+            {
+               "value": 1.6,
+               "period": 3
+            },
+            {
+               "value": 1.7,
+               "period": 4
+            },
+            {
+               "value": 0.4,
+               "period": 5
+            },
+            {
+               "value": 1.1,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "CustomerEngagementScore",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 121,
+               "period": 1
+            },
+            {
+               "value": 120,
+               "period": 2
+            },
+            {
+               "value": 125,
+               "period": 3
+            },
+            {
+               "value": 126,
+               "period": 4
+            },
+            {
+               "value": 130,
+               "period": 5
+            },
+            {
+               "value": 135,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NetPromoterScore",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 28,
+               "period": 1
+            },
+            {
+               "value": 27,
+               "period": 2
+            },
+            {
+               "value": 29,
+               "period": 3
+            },
+            {
+               "value": 32,
+               "period": 4
+            },
+            {
+               "value": 33,
+               "period": 5
+            },
+            {
+               "value": 35,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "LTV",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 21738,
+               "period": 1
+            },
+            {
+               "value": 16834,
+               "period": 2
+            },
+            {
+               "value": 22521,
+               "period": 3
+            },
+            {
+               "value": 23460,
+               "period": 4
+            },
+            {
+               "value": 24572,
+               "period": 5
+            },
+            {
+               "value": 25716,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "CAC",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 8750,
+               "period": 1
+            },
+            {
+               "value": 8571,
+               "period": 2
+            },
+            {
+               "value": 8605,
+               "period": 3
+            },
+            {
+               "value": 8261,
+               "period": 4
+            },
+            {
+               "value": 8125,
+               "period": 5
+            },
+            {
+               "value": 7692,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "LVTToCACRatio",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 2.5,
+               "period": 1
+            },
+            {
+               "value": 2,
+               "period": 2
+            },
+            {
+               "value": 2.6,
+               "period": 3
+            },
+            {
+               "value": 2.8,
+               "period": 4
+            },
+            {
+               "value": 3,
+               "period": 5
+            },
+            {
+               "value": 3.3,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "MonthsToRecoverCAC",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 19,
+               "period": 1
+            },
+            {
+               "value": 19,
+               "period": 2
+            },
+            {
+               "value": 18,
+               "period": 3
+            },
+            {
+               "value": 18,
+               "period": 4
+            },
+            {
+               "value": 17,
+               "period": 5
+            },
+            {
+               "value": 17,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "Invoiced",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 505,
+               "period": 1
+            },
+            {
+               "value": 515,
+               "period": 2
+            },
+            {
+               "value": 520,
+               "period": 3
+            },
+            {
+               "value": 490,
+               "period": 4
+            },
+            {
+               "value": 540,
+               "period": 5
+            },
+            {
+               "value": 560,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "Revenue",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 4987,
+               "period": 1
+            },
+            {
+               "value": 5158,
+               "period": 2
+            },
+            {
+               "value": 5369,
+               "period": 3
+            },
+            {
+               "value": 5590,
+               "period": 4
+            },
+            {
+               "value": 5892,
+               "period": 5
+            },
+            {
+               "value": 6175,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "COGS",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 848,
+               "period": 1
+            },
+            {
+               "value": 877,
+               "period": 2
+            },
+            {
+               "value": 913,
+               "period": 3
+            },
+            {
+               "value": 950,
+               "period": 4
+            },
+            {
+               "value": 1002,
+               "period": 5
+            },
+            {
+               "value": 1050,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "GrossMargin",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 4139,
+               "period": 1
+            },
+            {
+               "value": 4281,
+               "period": 2
+            },
+            {
+               "value": 4456,
+               "period": 3
+            },
+            {
+               "value": 4640,
+               "period": 4
+            },
+            {
+               "value": 4890,
+               "period": 5
+            },
+            {
+               "value": 5125,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "GrossMarginPercent",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 83,
+               "period": 1
+            },
+            {
+               "value": 83,
+               "period": 2
+            },
+            {
+               "value": 83,
+               "period": 3
+            },
+            {
+               "value": 83,
+               "period": 4
+            },
+            {
+               "value": 83,
+               "period": 5
+            },
+            {
+               "value": 83,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "TotalExpenses",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 640,
+               "period": 1
+            },
+            {
+               "value": 650,
+               "period": 2
+            },
+            {
+               "value": 660,
+               "period": 3
+            },
+            {
+               "value": 670,
+               "period": 4
+            },
+            {
+               "value": 680,
+               "period": 5
+            },
+            {
+               "value": 690,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "SalesAndMarketing",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 350,
+               "period": 1
+            },
+            {
+               "value": 360,
+               "period": 2
+            },
+            {
+               "value": 370,
+               "period": 3
+            },
+            {
+               "value": 380,
+               "period": 4
+            },
+            {
+               "value": 390,
+               "period": 5
+            },
+            {
+               "value": 400,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "RnD",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 180,
+               "period": 1
+            },
+            {
+               "value": 180,
+               "period": 2
+            },
+            {
+               "value": 180,
+               "period": 3
+            },
+            {
+               "value": 180,
+               "period": 4
+            },
+            {
+               "value": 180,
+               "period": 5
+            },
+            {
+               "value": 180,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "GeneralAndAdmin",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 110,
+               "period": 1
+            },
+            {
+               "value": 110,
+               "period": 2
+            },
+            {
+               "value": 110,
+               "period": 3
+            },
+            {
+               "value": 110,
+               "period": 4
+            },
+            {
+               "value": 110,
+               "period": 5
+            },
+            {
+               "value": 110,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "EBITDA",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 3499,
+               "period": 1
+            },
+            {
+               "value": 3631,
+               "period": 2
+            },
+            {
+               "value": 3796,
+               "period": 3
+            },
+            {
+               "value": 3970,
+               "period": 4
+            },
+            {
+               "value": 4210,
+               "period": 5
+            },
+            {
+               "value": 4435,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "BillingBasedPnL",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": -221,
+               "period": 1
+            },
+            {
+               "value": -223,
+               "period": 2
+            },
+            {
+               "value": -228,
+               "period": 3
+            },
+            {
+               "value": -263,
+               "period": 4
+            },
+            {
+               "value": -232,
+               "period": 5
+            },
+            {
+               "value": -225,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "RawLeadsEnquiries",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 3611,
+               "period": 1
+            },
+            {
+               "value": 3429,
+               "period": 2
+            },
+            {
+               "value": 5200,
+               "period": 3
+            },
+            {
+               "value": 5357,
+               "period": 4
+            },
+            {
+               "value": 4684,
+               "period": 5
+            },
+            {
+               "value": 4400,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ConversionRawLeadsToMQLs",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 1.8,
+               "period": 1
+            },
+            {
+               "value": 2.1,
+               "period": 2
+            },
+            {
+               "value": 1.5,
+               "period": 3
+            },
+            {
+               "value": 1.4,
+               "period": 4
+            },
+            {
+               "value": 1.9,
+               "period": 5
+            },
+            {
+               "value": 2,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "Opportunities",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 65,
+               "period": 1
+            },
+            {
+               "value": 72,
+               "period": 2
+            },
+            {
+               "value": 78,
+               "period": 3
+            },
+            {
+               "value": 75,
+               "period": 4
+            },
+            {
+               "value": 89,
+               "period": 5
+            },
+            {
+               "value": 88,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ConversionOppToWin",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 62,
+               "period": 1
+            },
+            {
+               "value": 58,
+               "period": 2
+            },
+            {
+               "value": 55,
+               "period": 3
+            },
+            {
+               "value": 61,
+               "period": 4
+            },
+            {
+               "value": 54,
+               "period": 5
+            },
+            {
+               "value": 59,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "WinToLossRatio",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 75,
+               "period": 1
+            },
+            {
+               "value": 82,
+               "period": 2
+            },
+            {
+               "value": 65,
+               "period": 3
+            },
+            {
+               "value": 79,
+               "period": 4
+            },
+            {
+               "value": 85,
+               "period": 5
+            },
+            {
+               "value": 78,
+               "period": 6
+            }
+         ]
+      }
+   ]
+}

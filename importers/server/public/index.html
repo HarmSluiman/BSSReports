@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link href='../lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>
+	
+    <script src='../lib/jquery/jquery-1.11.3.min.js'></script>
+    <script src='../lib/d3/d3.min.js' charset='utf-8'></script>
+    <script src='../lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>
+
+</head>
+<body>
+	<script src="../js/index.js"></script>
+	now the cool graph
+	 <div id='ufo-sightings'>graph area</div>
+	
+<!-- graph script -->
+	 <script>
+
+        d3.json("../data/viewdata/ufo-sightings.json", function(data) {
+            MG.data_graphic({
+                title: "UFO Sightings",
+                description: "Yearly UFO sightings from the year 1945 to 2010.",
+                data: data,
+                markers: [{'year': 1964, 'label': '"The Creeping Terror" released'}],
+                width: 650,
+                height: 150,
+                target: '#ufo-sightings',
+                x_accessor: 'year',
+                y_accessor: 'sightings'
+            })
+        })
+    </script>
+<!-- end of graph script  -->  
+<a rel="nofollow" href="./html/BaseLayout.html">See the prototype report page</a>
+</body>
+</html>

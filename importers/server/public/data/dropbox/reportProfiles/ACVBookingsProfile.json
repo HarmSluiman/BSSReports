@@ -1,0 +1,22 @@
+{"name":           "ACVBookings",
+	"description": "ACV Booking for this period of time",
+	"errorMessage":"An error occured while producing the chart.",
+	"reportID":    "ACVBookings",
+	"title":       "ACV Bookings",
+	"dataFile":    "ACVBookings.json",
+	"htmlFile":    "bookingMetrics/ACVBookings.html",
+	"keys":        ["NewACV", "NetNewACV", "ExpansionACV", "ChurnACV"],
+	"labels":      ["'New ACV'", "'Net New ACV'", "'Expansion ACV'", "'Churned ACV'"],
+	"yLabel":      "$ 000s",
+	"periodLabels":
+	["seed",
+	 "2015-01-01",
+	 "2015-02-01",	 
+	 "2015-03-01",	 
+	 "2015-04-01",	 
+	 "2015-05-01",	 
+	 "2015-06-01",	 
+	 "2015-07-01",	 
+	 "2015-08-01"
+	]    
+}  

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+    
+    <head>
+        <style type="text/css">
+            body, html { font-family:helvetica,arial,sans-serif; font-size:90%; }
+        </style>
+
+<!-- graphics package -->        
+		<link rel="stylesheet" type="text/css" href="../lib/metrics-graphics-2.4.0/dist/metricsgraphics.css"/>
+		<script type="text/javascript" src='../lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>  
+		<script type="text/javascript" src='../lib/d3/d3.min.js' charset='utf-8'></script>
+ 
+
+        
+        <link rel="stylesheet" href="../lib/jquery/jquery-ui-themes-1.11.3/themes/smoothness/jquery-ui.css">   
+        <script type="text/javascript" src='../lib/jquery/jquery-1.11.3.min.js'></script>        
+		<script src="../lib/jquery/jquery-ui-1.11.3/jquery-ui.js"></script>
+        
+               
+      
+        <style type="text/css">
+            html, body { width: 100%; height: 100%; margin: 0; }
+        </style>
+        
+        
+  <script>
+  	
+		$(function() {
+			$( "#mainContent" ).tabs();
+		});
+  
+  
+	$(document).ready(function(){
+		d3.json("../data/viewdata/ufo-sightings.json", function(data) {
+            MG.data_graphic({
+                title: "UFO Sightings",
+                description: "Yearly UFO sightings from the year 1945 to 2010.",
+                data: data,
+                markers: [{'year': 1964, 'label': '"The Creeping Terror" released'}],
+                width: 650,
+                height: 150,
+                target: '#Sample',
+                x_accessor: 'year',
+                y_accessor: 'sightings'
+            });
+        });      
+	
+	
+	});	
+  
+
+  </script>
+  
+          
+    </head>
+
+    <body>
+    
+	<div>
+		<div id="sample">
+		Title and action bar
+		</div>
+
+        <div id="mainContent">
+       		<ul  >
+       		    <li><a href="#failure">Report Shell1</a></li>
+       		    <li><a href="#ReportShell">Report Shell2</a></li>
+			</ul>	
+			<div id="ReportShell">			
+				now the cool graph
+				<div id="Sample"></div>
+<!-- graph script -->
+				pre script
+	 			<script >
+	 			
+	 			
+	 			</script>
+	 			
+    			post script
+<!-- end of graph script  --> 
+				</li> 
+			</div>		
+		</div> 				
+		
+		
+		
+	    <div>
+	    	advertising bar
+		</div>
+	</div>
+
+    </body>
+
+</html>
