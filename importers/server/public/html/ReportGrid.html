@@ -2,14 +2,14 @@
 <html>
 <head>
 <link
-	href='../../../../lib/metrics-graphics-2.4.0/dist/metricsgraphics.css'
+	href='./../../../lib/metrics-graphics-2.4.0/dist/metricsgraphics.css'
 	rel='stylesheet' type='text/css'>
-<script src='../../../../lib/jquery/jquery-1.11.3.min.js'
+<script src='./../../../lib/jquery/jquery-1.11.3.min.js'
 	type="text/javascript"></script>
-<script src='../../../../lib/d3/d3.min.js' charset='utf-8'
+<script src='./../../../lib/d3/d3.min.js' charset='utf-8'
 	type="text/javascript"></script>
 <script
-	src='../../../../lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'
+	src='./../../../lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'
 	type="text/javascript"></script>
 </head>
 <body  bgcolor="#A9A9F5">
@@ -94,7 +94,7 @@
 		</tr>
 	</table>
 	<script type="text/javascript">
-    d3.json('../../../data/viewdata/ACVBookings.json', function(data) {
+    d3.json('./../../data/viewdata/ACVBookings.json', function(data) {
 
     	d3.time.format('%B');
     	for (var i = 0; i < data.length; i++) { 
@@ -112,7 +112,7 @@
            
         })
     })
-            d3.json('../../../data/viewdata/ACVChurnAndExpansion.json', function(data) {
+            d3.json('./../../data/viewdata/ACVChurnAndExpansion.json', function(data) {
 
         	d3.time.format('%B');
         	for (var i = 0; i < data.length; i++) { 
