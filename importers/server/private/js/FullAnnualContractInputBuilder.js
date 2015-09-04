@@ -291,7 +291,7 @@ exports.build = function (inputJSON, outputJSON) {
 			initValue(outputJSON.items[outputPercentCustomerChurn].values, i);
 			outputJSON.items[outputPercentCustomerChurn].values[i].value = 
 				Math.round((-outputJSON.items[outputNumChurnCustomers].values[i].value /
-						outputJSON.items[outputTotalNumCustomers].values[i-1].value)*10000)/10000;
+						outputJSON.items[outputTotalNumCustomers].values[i-1].value)*10000)/100;
 			outputJSON.items[outputPercentCustomerChurn].values[i].period = i;
 		}
 		// Set PercentNetACVChurn (-D15-D16)/D19
