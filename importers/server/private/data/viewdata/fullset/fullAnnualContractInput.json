@@ -1,7 +1,7 @@
 {
    "label": "AnnualContractInput",
    "items": [
-      {  
+      {
          "name": "Bookings",
          "values": [
             {
@@ -100,7 +100,7 @@
             }
          ]
       },
-      {      
+      {
          "name": "AverageMonthUpfront",
          "values": [
             {

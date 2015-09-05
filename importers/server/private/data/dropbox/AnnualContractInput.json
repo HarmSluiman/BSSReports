@@ -1,5 +1,5 @@
 { "label": "AnnualContractInput",   
-  "items": [               
+  "items": [             
           { "name":"Bookings", 
               "values":[
              {"value": "", "month":"DEC"},          
@@ -10,7 +10,7 @@
      		 {"value":324, "month":"MAY"},
      		 {"value":348, "month":"JUN"}
      		 ]     
-          },     
+          },      
      		 
      	  { "name":"AverageContractTerm",
      	     "values":[
