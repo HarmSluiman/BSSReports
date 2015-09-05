@@ -55,7 +55,13 @@
 
 				<table width="90%" border="0" cellspacing="0" cellpadding="0">
 					<tr>
-						<th height="121" bgcolor="#CED8F6" scope="row">Coming soon 1</th>
+						<th height="121" bgcolor="#CED8F6" scope="row">
+						<div id="ARPAAverageMRRCell"/>
+							<button 
+								onclick="window.location.href='./reports/dashboard/bookingMetrics/ARPAAverageMRR.html'">
+								ARPA Avererage MRR
+							</button>
+						</th>
 					</tr>
 				</table>
 
@@ -87,7 +93,12 @@
 
 				<table width="90%" border="0" cellspacing="0" cellpadding="0">
 					<tr>
-						<th height="121" bgcolor="#CED8F6" scope="row">Coming soon 4</th>
+						<th height="121" bgcolor="#CED8F6" scope="row"><div id="AvgMonthsPaidUpFrontCell"/>
+							<button 
+								onclick="window.location.href='./reports/dashboard/bookingMetrics/AvgMonthsPaidUpFront.html'">
+								Average Months Paid Up Front
+							</button>
+						</th>
 					</tr>
 				</table>
 			</th>
@@ -125,6 +136,78 @@
                 height: 150,
                 small_text: 'true',            
                 target: '#ACVChurnAndExpansionCell',
+                x_accessor: 'period',
+                y_accessor: 'value' 
+               
+            })
+        })
+                    d3.json('./../data/viewdata/ARPAAverageMRR.json', function(data) {
+
+        	d3.time.format('%B');
+        	for (var i = 0; i < data.length; i++) { 
+                data[i] = MG.convert.date(data[i], 'period');
+                }
+            MG.data_graphic({
+                data: data,
+                // auto resizing
+                full_width: 'true',
+                height: 150,
+                small_text: 'true',            
+                target: '#ARPAAverageMRRCell',
+                x_accessor: 'period',
+                y_accessor: 'value' 
+               
+            })
+        })
+                    d3.json('./../data/viewdata/AvgMonthsPaidUpFront.json', function(data) {
+
+        	d3.time.format('%B');
+        	for (var i = 0; i < data.length; i++) { 
+                data[i] = MG.convert.date(data[i], 'period');
+                }
+            MG.data_graphic({
+                data: data,
+                // auto resizing
+                full_width: 'true',
+                height: 150,
+                small_text: 'true',            
+                target: '#AvgMonthsPaidUpFrontCell',
+                x_accessor: 'period',
+                y_accessor: 'value' 
+               
+            })
+        })
+                    d3.json('./../data/viewdata/NewCustomerBookings.json', function(data) {
+
+        	d3.time.format('%B');
+        	for (var i = 0; i < data.length; i++) { 
+                data[i] = MG.convert.date(data[i], 'period');
+                }
+            MG.data_graphic({
+                data: data,
+                // auto resizing
+                full_width: 'true',
+                height: 150,
+                small_text: 'true',            
+                target: '#NewCustomerBookingsCell',
+                x_accessor: 'period',
+                y_accessor: 'value' 
+               
+            })
+        })
+                    d3.json('./../data/viewdata/PercentNetACVChurn.json', function(data) {
+
+        	d3.time.format('%B');
+        	for (var i = 0; i < data.length; i++) { 
+                data[i] = MG.convert.date(data[i], 'period');
+                }
+            MG.data_graphic({
+                data: data,
+                // auto resizing
+                full_width: 'true',
+                height: 150,
+                small_text: 'true',            
+                target: '#PercentNetACVChurnCell',
                 x_accessor: 'period',
                 y_accessor: 'value' 
                
