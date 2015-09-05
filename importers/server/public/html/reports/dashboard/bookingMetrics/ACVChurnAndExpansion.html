@@ -37,7 +37,7 @@ function clearBox(elementID)
 <br/>
 <!-- graph script -->
 	 <script>
-        d3.json('./../../../data/viewdata/ACVChurnAndExpansion.json', function(data) {
+        d3.json('../../../../data/viewdata/ACVChurnAndExpansion.json', function(data) {
             for (var i = 0; i < data.length; i++) { 
                 data[i] = MG.convert.date(data[i], 'period');
                 }

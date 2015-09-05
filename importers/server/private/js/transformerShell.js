@@ -84,7 +84,7 @@ function produceReportPage( outputPath, profileJSON){
 	"<br/>\n"+
 	"<!-- graph script -->\n"+
 	"	 <script>\n"+
-	"        d3.json('./../../../data/viewdata/"+ dataFile +"', function(data) {\n"+
+	"        d3.json('../../../../data/viewdata/"+ dataFile +"', function(data) {\n"+
 	"            for (var i = 0; i < data.length; i++) { \n"+
     "                data[i] = MG.convert.date(data[i], 'period');\n"+
     "                }\n"+
