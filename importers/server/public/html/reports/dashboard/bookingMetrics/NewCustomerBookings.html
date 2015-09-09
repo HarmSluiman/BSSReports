@@ -15,7 +15,7 @@ function showHide(elementID)
 	}							
 	else {						
 		showingPage = true;		
-    document.getElementById(elementID).innerHTML = "new data";
+    document.getElementById(elementID).innerHTML = " <iframe src='./NewCustomerBookingsData.html' width='100%' />" ;
 	}    						
 								
 								
@@ -28,13 +28,13 @@ function clearBox(elementID)
 </script>						
 </head>						
 <body bgcolor='#CED8F6' >
-	 <div id='NewCustomerBookings'/>
 	 <div>
 	<div>										 
 		<input type='button' id='ShowHide' value='Show/Hide Data' onclick='showHide("DataTable")'/> 
 	</div>										
-	<div id='DataTable'>Data Table space</div> 	
+	<div id='DataTable'></div> 					
 <br/>
+	 <div id='NewCustomerBookings'></div>
 <!-- graph script -->
 	 <script>
         d3.json('../../../../data/viewdata/NewCustomerBookings.json', function(data) {
@@ -49,6 +49,7 @@ function clearBox(elementID)
                 // auto resizing
                 full_width: 'true',
                 height: 300,
+ 				 area: false , 
                 //room for labels
                 right: 120,
                 //room for y axis label

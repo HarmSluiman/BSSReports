@@ -77,6 +77,14 @@ exports.build = function (inputJSON, outputJSON) {
 	var outputConversionOppToWin = 40;
 	var inputWinLossRatio = 19;
 	var outputWinLossRatio = 41;
+	var inputNumFTESalesRep = 20;
+	var outputNumFTESalesRep = 42;
+	var inputQuotaPerRep = 21;
+	var outputQuotaPerRep = 43;
+	var outputSalesCapacity = 44;
+	var inputCoverageRatio = 22;
+	var outputCoverageRatio = 45;
+	var outputProductivityPerFTE = 46;
 	
 	var C20, C23, D6, D7, D8, D9, D10, D11, D14, D15, D16, D17, D19, D20, 
 		D23, D24, D25, D26, D28, D29, D30, D31, D33, D34, D36, D37,
@@ -570,8 +578,62 @@ exports.build = function (inputJSON, outputJSON) {
 			outputJSON.items[outputRawLeadsEnquiries].values[i].period = i;
 		}
 
+// Sales Metrics
+		// Copy Number of FTE Sales Reps
+		initItem(outputJSON.items, outputNumFTESalesRep);
+		outputJSON.items[outputNumFTESalesRep].name = "NumFTESalesRep";
+		for (i = 0; i < inputJSON.items[inputNumFTESalesRep].values.length ; i++){
+			initValue(outputJSON.items[outputNumFTESalesRep].values, i);
+			outputJSON.items[outputNumFTESalesRep].values[i].value = 
+				inputJSON.items[inputNumFTESalesRep].values[i].value;
+			outputJSON.items[outputNumFTESalesRep].values[i].period = i;
+		}
+		// Copy Quota set per FTE sales rep
+		initItem(outputJSON.items, outputQuotaPerRep);
+		outputJSON.items[outputQuotaPerRep].name = "QuotaPerRep";
+		for (i = 0; i < inputJSON.items[inputQuotaPerRep].values.length ; i++){
+			initValue(outputJSON.items[outputQuotaPerRep].values, i);
+			outputJSON.items[outputQuotaPerRep].values[i].value = 
+				inputJSON.items[inputQuotaPerRep].values[i].value;
+			outputJSON.items[outputQuotaPerRep].values[i].period = i;
+		}
+		// Set Sales Capacity D78 * D77
+		initItem(outputJSON.items, outputSalesCapacity);
+		outputJSON.items[outputSalesCapacity].name = "SalesCapacity";
+		initValue(outputJSON.items[outputSalesCapacity].values, 0);
+		outputJSON.items[outputSalesCapacity].values[0].value = 0;
+		outputJSON.items[outputSalesCapacity].values[0].period = 0;
+		for (i = 1; i < outputJSON.items[outputConversionRawLeadsToMQLs].values.length ; i++){
+			D78 = outputJSON.items[outputQuotaPerRep].values[i].value;
+			D77 = outputJSON.items[outputNumFTESalesRep].values[i].value;
+			initValue(outputJSON.items[outputSalesCapacity].values, i);
+			outputJSON.items[outputSalesCapacity].values[i].value = Math.round(D78*D77*10)/10;	
+			outputJSON.items[outputSalesCapacity].values[i].period = i;
+		}
+		// Copy ratio for plan
+		initItem(outputJSON.items, outputCoverageRatio);
+		outputJSON.items[outputCoverageRatio].name = "CoverageRatio";
+		for (i = 0; i < inputJSON.items[inputCoverageRatio].values.length ; i++){
+			initValue(outputJSON.items[outputCoverageRatio].values, i);
+			outputJSON.items[outputCoverageRatio].values[i].value = 
+				inputJSON.items[inputCoverageRatio].values[i].value;
+			outputJSON.items[outputCoverageRatio].values[i].period = i;
+		}
+		// Set Productivity per FTE sales rep D14/D77
+		initItem(outputJSON.items, outputProductivityPerFTE);
+		outputJSON.items[outputProductivityPerFTE].name = "ProductivityPerfTE";
+		initValue(outputJSON.items[outputProductivityPerFTE].values, 0);
+		outputJSON.items[outputProductivityPerFTE].values[0].value = 0;
+		outputJSON.items[outputProductivityPerFTE].values[0].period = 0;
+		for (i = 1; i < outputJSON.items[outputConversionRawLeadsToMQLs].values.length ; i++){
+			D14 = outputJSON.items[outputNewACV].values[i].value;
+			D77 = outputJSON.items[outputNumFTESalesRep].values[i].value;
+			initValue(outputJSON.items[outputProductivityPerFTE].values, i);
+			outputJSON.items[outputProductivityPerFTE].values[i].value = Math.round(D14/D77*10)/10;	
+			outputJSON.items[outputProductivityPerFTE].values[i].period = i;
+		}
 
-// Sales Metrics		
+		
 		
 
 	} else {

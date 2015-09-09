@@ -1,5 +1,5 @@
 { "label": "AnnualContractInput",   
-  "items": [               
+  "items": [                 
           { "name":"Bookings", 
               "values":[
              {"value": "", "month":"DEC"},          
@@ -240,19 +240,30 @@
      		 {"value":85, "month":"MAY"},
      		 {"value":78, "month":"JUN"}
      		 ] 
-          },          
+          },   
      		 
      	  { "name":"NumberFTEReps",
-     	     "values":[
-             {"value": "", "month":"DEC"},
-     	     {"value":6, "month":"JAN"},
-     		 {"value":6.5, "month":"FEB"},
-     		 {"value":7, "month":"MAR"},
-     		 {"value":7.5, "month":"APR"},
-     		 {"value":8, "month":"MAY"},
-     		 {"value":8.5, "month":"JUN"}
-     		 ] 
-     	  },      
+      	     "values":[
+              {"value": "", "month":"DEC"},
+      	     {"value":6,   "month":"JAN"},
+      		 {"value":6.5, "month":"FEB"},
+      		 {"value":7,   "month":"MAR"},
+      		 {"value":7.5, "month":"APR"},
+      		 {"value":8,   "month":"MAY"},
+      		 {"value":8.5, "month":"JUN"}
+      		 ] 
+      	  },      
+     	  { "name":"QuotaPerFTE",
+      	     "values":[
+              {"value": "", "month":"DEC"},
+      	     {"value":4.2, "month":"JAN"},
+      		 {"value":4.2, "month":"FEB"},
+      		 {"value":4.2, "month":"MAR"},
+      		 {"value":4.2, "month":"APR"},
+      		 {"value":4.2, "month":"MAY"},
+      		 {"value":4.2, "month":"JUN"}
+      		 ] 
+      	  },         
      			 
           { "name":"CoverageRatio",
              "values":[
