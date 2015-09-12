@@ -51,7 +51,7 @@ exports.build = function (inputJSON, outputJSON) {
 	var outputNetPromoterScore = 21;
 	var outputLTV = 22;
 	var outputCAC = 23;
-	var outputLVTToCACRatio = 24;
+	var outputLTVToCACRatio = 24;
 	var outputMonthsToRecoverCAC = 25;
 	var inputInvoiced = 12;
 	var outputInvoiced = 26;
@@ -362,18 +362,18 @@ exports.build = function (inputJSON, outputJSON) {
 			outputJSON.items[outputCAC].values[i].value = Math.round(D55/D24*1000);	
 			outputJSON.items[outputCAC].values[i].period = i;
 		}
-		// Set LVT to CAC Ratio D40/D41
-		initItem(outputJSON.items, outputLVTToCACRatio);
-		initValue(outputJSON.items[outputLVTToCACRatio].values, 0);
-		outputJSON.items[outputLVTToCACRatio].values[0].value = 0;
-		outputJSON.items[outputLVTToCACRatio].values[0].period = 0;
-		outputJSON.items[outputLVTToCACRatio].name = "LVTToCACRatio";
+		// Set LTV to CAC Ratio D40/D41
+		initItem(outputJSON.items, outputLTVToCACRatio);
+		initValue(outputJSON.items[outputLTVToCACRatio].values, 0);
+		outputJSON.items[outputLTVToCACRatio].values[0].value = 0;
+		outputJSON.items[outputLTVToCACRatio].values[0].period = 0;
+		outputJSON.items[outputLTVToCACRatio].name = "LTVToCACRatio";
 		for (i = 1; i < outputJSON.items[outputNumNewCustomers].values.length ; i++){
 			D40 = outputJSON.items[outputLTV].values[i].value;
 			D41 = outputJSON.items[outputCAC].values[i].value;
-			initValue(outputJSON.items[outputLVTToCACRatio].values, i);
-			outputJSON.items[outputLVTToCACRatio].values[i].value = Math.round(D40/D41*10)/10;
-			outputJSON.items[outputLVTToCACRatio].values[i].period = i;
+			initValue(outputJSON.items[outputLTVToCACRatio].values, i);
+			outputJSON.items[outputLTVToCACRatio].values[i].value = Math.round(D40/D41*10)/10;
+			outputJSON.items[outputLTVToCACRatio].values[i].period = i;
 		}
 		// Set MonthsToRecoverCAC D41/(D10*D52)
 		initItem(outputJSON.items, outputMonthsToRecoverCAC);

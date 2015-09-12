@@ -201,6 +201,23 @@ function produceDataFile (input, outputDataPath, outputHtmlPath, profileJSON) {
 		});
 	}
 }
+function processProfile (data, profile, outputHtmlPath, outputDataPath){
+	var fs = require('fs');
+	console.log("runing profile:"+ profile);
+	var profileData;
+	fs.readFile(profile, function (err, profileData) {
+		if (err) {
+			throw err;	
+		} else {
+			var profileJSON = JSON.parse(profileData);
+			produceDataFile(data, outputDataPath, outputHtmlPath, profileJSON);
+			produceReportPage(outputHtmlPath, profileJSON);
+		}
+	});
+	
+}
+exports.processProfile = processProfile;
+
 exports.watcher = function () {
 	var fs = require('fs');
 	var filename = './server/private/data/viewdata/fullset/fullAnnualContractInput.json';
@@ -221,17 +238,18 @@ exports.watcher = function () {
 				fs.readdir(profilePath, function (err, fileList) {
 					console.log("number of profile files:"+ fileList.length);
 					for(var i=0; i < fileList.length; i++ ){
-						var profileData;
-						fs.readFile(profilePath + fileList[i], function (err, profileData) {
-							if (err) {
-								throw err;	
-							} else {
-								var profileJSON = JSON.parse(profileData);
-								produceDataFile(data, outputDataPath, outputHtmlPath, profileJSON);
-								produceReportPage(outputHtmlPath, profileJSON);
-							}
-						});
-					}
+						processProfile(data, profilePath + fileList[i], outputHtmlPath, outputDataPath);
+//						var profileData;
+//						fs.readFile(profilePath + fileList[i], function (err, profileData) {
+//							if (err) {
+//								throw err;	
+//							} else {
+//								var profileJSON = JSON.parse(profileData);
+//								produceDataFile(data, outputDataPath, outputHtmlPath, profileJSON);
+//								produceReportPage(outputHtmlPath, profileJSON);
+//							}
+//						});
+											}
 				});				
 			}
 		});

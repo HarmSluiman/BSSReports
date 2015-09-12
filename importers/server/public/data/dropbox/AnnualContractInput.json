@@ -10,7 +10,7 @@
      		 {"value":324, "month":"MAY"},
      		 {"value":348, "month":"JUN"}
      		 ]     
-          },      
+          },          
      		 
      	  { "name":"AverageContractTerm",
      	     "values":[
@@ -263,7 +263,7 @@
       		 {"value":4.2, "month":"MAY"},
       		 {"value":4.2, "month":"JUN"}
       		 ] 
-      	  },         
+      	  },             
      			 
           { "name":"CoverageRatio",
              "values":[
