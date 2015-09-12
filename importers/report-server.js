@@ -1,4 +1,8 @@
-// set up Express static http server
+/*
+ * Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.
+ */
+
+// set up Express static http server used in dev environments - nginx used in production
 var express = require('express');
  
 var server = express();

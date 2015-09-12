@@ -1,4 +1,7 @@
 /*
+ * Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.
+ * 
+ * 
  *	The role of the watcher is to take an input xcel or json file and 
  * 	copy them to the appropriate places in the private space for processing.
  * 	A main objective is to protect from external manipulation once received.

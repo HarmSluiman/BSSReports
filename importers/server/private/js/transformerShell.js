@@ -1,4 +1,6 @@
 /*
+ * Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.
+ * 
  *	The role of the Transformer is to take the full data set and feed it to each
  * 	report unique data sets
  */
@@ -49,10 +51,11 @@ function produceReportPage( outputPath, profileJSON){
 		"<!DOCTYPE html>\n" +
 		"<html>\n" +
 		"<head>\n" +
-		"<link href='../../../../lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>\n" +
-		"<script src='../../../../lib/jquery/jquery-1.11.3.min.js'></script>\n" +
-		"<script src='../../../../lib/d3/d3.min.js' charset='utf-8'></script>\n" +
-		"<script src='../../../../lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>\n" +
+		"<meta name='copyright' content='© Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />\n" +
+		"<link href='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>\n" +
+		"<script src='/lib/jquery/jquery-1.11.3.min.js'></script>\n" +
+		"<script src='/lib/d3/d3.min.js' charset='utf-8'></script>\n" +
+		"<script src='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>\n" +
 		"<script>						\n"+
 		"var showingPage = false;		\n"+
 		"function showHide(elementID)	\n"+
@@ -86,7 +89,7 @@ function produceReportPage( outputPath, profileJSON){
 	"	 <div id='" + reportID + "'></div>\n"+
 	"<!-- graph script -->\n"+
 	"	 <script>\n"+
-	"        d3.json('../../../../data/viewdata/"+ dataFile +"', function(data) {\n"+
+	"        d3.json('/data/viewdata/"+ dataFile +"', function(data) {\n"+
 	"            for (var i = 0; i < data.length; i++) { \n"+
     "                data[i] = MG.convert.date(data[i], 'period');\n"+
     "                }\n"+
@@ -126,6 +129,13 @@ function produceReportPage( outputPath, profileJSON){
 		}
 	}
 	fileString = fileString +
+	"<!-- footer -->							\n"+
+	"<hr/>										\n"+
+	"<table>									\n"+
+	"<th width='100%' align='center'>			\n"+
+	"&copy; Copyright 2015 by 9250891 CANADA INC.. All rights reserved. This material may not be duplicated without written permission.\n"+
+	"</th>										\n"+
+	"</table>									\n"+
 	"</body>                                     \n"+
 	"</html>                                     \n"
 	;

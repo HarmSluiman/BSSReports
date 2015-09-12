@@ -1,4 +1,6 @@
 /*
+ * Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.
+ * 
  *	The role of the importer is to take an input xcel or json file and 
  * 	process them into the data into the various view data files for rendering
  */

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href='../../../../lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>
-<script src='../../../../lib/jquery/jquery-1.11.3.min.js'></script>
-<script src='../../../../lib/d3/d3.min.js' charset='utf-8'></script>
-<script src='../../../../lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>
+<meta name='copyright' content='� Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />
+<link href='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>
+<script src='/lib/jquery/jquery-1.11.3.min.js'></script>
+<script src='/lib/d3/d3.min.js' charset='utf-8'></script>
+<script src='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>
 <script>						
 var showingPage = false;		
 function showHide(elementID)	
@@ -37,7 +38,7 @@ function clearBox(elementID)
 	 <div id='NewCustomerBookings'></div>
 <!-- graph script -->
 	 <script>
-        d3.json('../../../../data/viewdata/NewCustomerBookings.json', function(data) {
+        d3.json('/data/viewdata/NewCustomerBookings.json', function(data) {
             for (var i = 0; i < data.length; i++) { 
                 data[i] = MG.convert.date(data[i], 'period');
                 }
@@ -63,5 +64,12 @@ function clearBox(elementID)
         })
      </script>
 <!-- end of graph script  -->               
+<!-- footer -->							
+<hr/>										
+<table>									
+<th width='100%' align='center'>			
+&copy; Copyright 2015 by 9250891 CANADA INC.. All rights reserved. This material may not be duplicated without written permission.
+</th>										
+</table>									
 </body>                                     
 </html>                                     

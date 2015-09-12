@@ -1,6 +1,9 @@
 /*
+ * Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.
+ * 
  *	The role of the importer is to take an input xcel or json file and 
  * 	convert/merge the data into the various view data files for rendering
+ * Also generate a basic html table to render the raw full data set.
  */
 function cloner (input, filename) {
 
