@@ -7,8 +7,9 @@
 function cloner (input, filename) {
 	var fs = require('fs');
 	var targetdir = './server/private/data/viewdata/fullset/';
-	var targetViewDataDir = './server/private/data/viewdata/';
+	var targetDataTableDir = './server/private/html/dataTables/';
 	var inputJSON, outputJSON = {};
+	var outputHtmlData = "";
 	if (input) {
 		// create JSON input structure
 		inputJSON = JSON.parse(input);
@@ -17,14 +18,21 @@ function cloner (input, filename) {
 		// monitor for input dropbox files and move to private area
 		var builder = require('./FullAnnualContractInputBuilder.js');
 		builder.build(inputJSON, outputJSON);		
-		// write contents to viewer data source directory
-
 		// write fullset contents to viewer data source directory
 		console.log('writing full set data file ' + filename);
 		fs.writeFile(targetdir + "full" + filename, JSON.stringify(outputJSON, null, 3), function (err) {
 			if (err) { throw err; } 
 			console.log(' data saved');
 		});
+		// write data and html to viewer source directory
+		outputHtmlData = builder.generateHtmlFromJSON(outputJSON);		
+		console.log('writing full set data file ' + filename);
+		fs.writeFile(targetDataTableDir + "fullAnnualContractData.html", outputHtmlData, function (err) {
+			if (err) { throw err; } 
+			console.log(' data html saved');
+		});
+
+
 	}
 }
 

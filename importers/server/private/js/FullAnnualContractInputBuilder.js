@@ -16,7 +16,55 @@ function initValue (inputArray, index){
 	inputArray[index] = {value:'', period:''};
 }
 
+exports.generateHtmlFromJSON = function (inputJSON){
+	var htmlDataTable = "";
+	// one row for each value set
+	htmlDataTable = 
+		"<!DOCTYPE html>\n" +
+		"<html>\n" +
+		"<head>\n" +
+		"<meta name='copyright' content='© Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />\n" +
+		"								\n"+
+		"</head>						\n"+
+		"<body bgcolor='#A9A9F5'> \n" +
+		"   <table id='dataTable' style='table-layout: fixed' bgcolor='#F6D8CE' width='100%'  border='1' cellspacing='2' cellpadding='0'> \n";
+	
+	htmlDataTable = htmlDataTable + "      <tr align='center'> <th> </th>";
+	// use first object as template for all columns
+	var i;
+	var j;
+	for (i=1; i<inputJSON.items[0].values.length; i++){
+		htmlDataTable = htmlDataTable + " <th>" + inputJSON.items[0].values[i].period + "</th> ";
+	}
+	htmlDataTable = htmlDataTable + "</tr> \n";
+		
+	for (i=0; i<inputJSON.items.length; i++){
+		htmlDataTable = htmlDataTable + "      <tr > <td align='left' width='30'>" + inputJSON.items[i].name + "</td> ";
+		for (j=1; j<inputJSON.items[i].values.length; j++){
+			htmlDataTable = htmlDataTable + "<td bgcolor='#CED8F6' contenteditable='true'>" + inputJSON.items[i].values[j].value + "</td>";
+		}
+		htmlDataTable = htmlDataTable + "</tr> \n";
+	}
+	htmlDataTable = htmlDataTable +
+		"   </table> \n"+ 
+		"<!-- footer --> \n"+
+		"	<hr/> \n"+
+		"	<table> \n"+
+		"		<th width='100%' align='center'> \n"+
+		"			&copy; Copyright 2015 by 9250891 CANADA INC.. All rights reserved. This material may not be duplicated without written permission. \n"+
+		"		</th> \n"+
+		"	</table> \n"+
+		"</body>\n";
+	
+	return htmlDataTable;
+};
 
+/*
+ * build
+ * based on the input data this function does teh calculations and expansion to create the full data set 
+ * as used in the xls on the forEnterepreneurs.com site
+ * in addition it will generate an html page with a table showing the full set of data
+ */
 exports.build = function (inputJSON, outputJSON) {
 	var inputBookings = 0;
 	var outputBookings = 0;

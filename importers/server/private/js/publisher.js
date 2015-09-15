@@ -44,6 +44,27 @@ exports.watcher = function () {
 		  }
 	});
 	console.log("Now watching server/private/data/viewdata/ for changes...");
+
+	fs.watch('./server/private/html/dataTables/', function(event, filename){
+		console.log( filename + " will be published");		
+		console.log('event is: ' + event);
+		  if (filename) {
+		    console.log('filename provided: ' + filename);
+			  // read the modified file and push to cloner
+			var data;
+			fs.readFile('./server/private/html/dataTables/' + filename, function (err, data) {
+			if (err) {
+				throw err;	
+			} else {
+				cloner(data, './server/public/html/reports/dashboard/dataTables/' + filename);
+				}
+			});
+		  } else {
+		    console.log('filename not provided');
+		  }
+	});
+	console.log("Now watching server/private/html/dataTables/ for changes...");
+
 	
 	fs.watch('./server/private/data/viewdata/viewProfiles/', function(event, filename){
 		console.log( filename + " will be processed");		
@@ -64,6 +85,7 @@ exports.watcher = function () {
 		  }
 	});
 	console.log("Now watching server/private/data/viewdata/viewProfile/ for changes...");
+	
 
 };
 
