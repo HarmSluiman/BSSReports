@@ -24,7 +24,56 @@ exports.generateHtmlFromJSON = function (inputJSON){
 		"<html>\n" +
 		"<head>\n" +
 		"<meta name='copyright' content='© Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />\n" +
-		"								\n"+
+		"			\n"+
+		"			\n"+
+		"<script src='/js/postTable.js'>						\n"+
+		"														\n"+
+		"</script>												\n"+
+		"<script>												\n"+
+		"	function initItem (inputArray, index) {  			\n"+
+		"		inputArray[index] = {name:'n' , values:[]};	  	\n"+
+		"	}													\n"+
+		"	function initValue (inputArray, index){  			\n"+
+		"		inputArray[index] = {value:'v', period:'1'};  	\n"+
+		"	}													\n"+
+		" 														\n"+
+		"   function sendJSON() { 								\n"+  
+		"      var outputJSON =	 {								\n"+
+		" 		  'label': 'AnnualContractInput',  				\n"+
+		"  		  'items': [{									\n"+
+		"         'name': 'name',								\n"+
+		"         'values': [{'value':'\"v\"', 'period':'\"1\"'}]}]};			\n"+     
+		"      var rows = document.getElementById('dataTable').rows;			\n"+
+		"      // iterate through each row in this specific table				\n"+
+		"      // each row is an item in the JSON model							\n"+
+		"      // each cell is a value in the JSON model   						\n"+ 
+		"      // loop through rows, skip row 1									\n"+
+		"      for(var i = 1, outputi = 0, rowCnt = rows.length; i < rowCnt; i++, outputi++) {  					\n"+
+		"         initItem(outputJSON.items,outputi);																\n"+
+		"         outputJSON.items[outputi].name = rows[i].firstElementChild.firstChild.data; 						\n"+
+        " 		  //in each row iterate through the cells															\n"+
+        "   	  for(var j=1, outputj =0,cellCnt = rows[i].children.length; j < cellCnt; j++, outputj++) {			\n"+
+		"   		 initValue(outputJSON.items[outputi].values, outputj);											\n"+
+		"   	     // top row of table hold period values															\n"+
+		"    	     outputJSON.items[outputi].values[outputj].period = rows[0].children[j].innerHTML;				\n"+
+		"     	     outputJSON.items[outputi].values[outputj].value = rows[i].children[j].innerHTML;				\n"+
+		"         }																									\n"+
+		"      }																									\n"+
+		"	   // for now do the post even though nothing will happen other than being swallowed by the server		\n"+
+		"      postTable('http://localhost:10000', JSON.stringify(outputJSON, null, 3));  							\n"+
+		"	     			\n"+
+		"   }				\n"+
+		"</script> 			\n"+
+"		\n"+
+		"<p>Once implemented, Submitting updated data from here will feed your raw input and regenerate \n"+
+		"the reports without and derived calculations. To provide new base data and allow \n"+
+		"derived calculations, please submit new base data <a href='/html/NotImplementedYet.html'> here</a>.</p>\n"+
+		"							\n"+
+		"<button					\n"+
+		"	onclick='sendJSON()'> 	\n"+
+		"	submit the new data		\n"+
+		"</button>					\n"+
+	
 		"</head>						\n"+
 		"<body bgcolor='#A9A9F5'> \n" +
 		"   <table id='dataTable' style='table-layout: fixed' bgcolor='#F6D8CE' width='100%'  border='1' cellspacing='2' cellpadding='0'> \n";

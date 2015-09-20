@@ -66,7 +66,9 @@ function produceReportPage( outputPath, profileJSON){
 		"	}							\n"+
 		"	else {						\n"+
 		"		showingPage = true;		\n"+
-		"    document.getElementById(elementID).innerHTML = \" <iframe src='./"+ reportID +"Data.html' width='100%' />\" ;\n"+
+		"    document.getElementById(elementID).innerHTML = \" "+
+		"		<input type='button' value='Redraw the graph with your changes' onClick='updateFromTable(ACVChurnAndExpansionTableData)'/> "+
+		"		<iframe src='./"+ reportID +"Data.html' height='250' width='100%' />\" ;\n"+
 		"	}    						\n"+
 		"								\n"+
 		"								\n"+
@@ -76,6 +78,57 @@ function produceReportPage( outputPath, profileJSON){
 		"{								\n"+
 		"    document.getElementById(elementID).innerHTML = \"\";\n"+
 		"}								\n"+
+		"								\n"+
+		"								\n"+
+		"function loadGraph(data)								\n"+
+		"{								\n"+
+		"            MG.data_graphic({\n"+
+		"                title: '" + title + "',\n"+
+		"                description: '" + description + "',\n"+
+		"                error: '" + errorMessage + "',\n"+
+		"                data: data,\n"+
+		"                // auto resizing\n"+
+		"                full_width: 'true',\n"+
+		"                height: 300,\n"+
+		" 				 area: false , \n" +
+		"                //room for labels\n"+
+		"                right: 120,\n"+
+		"                //room for y axis label\n"+
+		"                left: 100,\n"+
+		"                target: '#" + reportID + "',\n"+
+		"                legend:[" + labels + "],\n"+
+		"                x_accessor: 'period',\n"+
+		"                y_accessor: 'value' ,\n"+
+		"                y_label: '" + yLabel + "'\n"+
+		"            });\n"+
+
+		"}								\n"+
+		"								\n"+
+		"								\n"+
+		"function updateFromTable(data){ 										\n"+
+		"// index through the table data cells and copy to the array 			\n"+
+	 	"var rows = window.frames[window.frames.length - 1].document.getElementById('dataTable').rows;	\n"+		
+	    "// iterate through each row in this specific table						\n"+			
+	    "// each row is an item in the JSON model								\n"+		
+	    "// each cell is a value in the JSON model   							\n"+		
+	    "// loop through rows, skip row 1 and labels in column 1				\n"+							
+	    "for(var i = 1, outputi = 0, rowCnt = rows.length; i < rowCnt; i++, outputi++) {	\n"+  						
+	 	"	//in each row iterate through the cells											\n"+				
+	   	"    for(var j=1, outputj =0,cellCnt = rows[i].children.length; j < cellCnt; j++, outputj++) { 	\n"+														
+	   	"     	// period data is reused from prior usage												\n"+		
+	    "	    data[outputi][outputj].value = rows[i].children[j].firstChild.data;						\n"+
+	    "     }																							\n"+			
+	    "  }							\n"+
+		"// refresh the graph 			\n"+
+		"loadGraph(data); 				\n"+
+		"// save results in case transient data object was input 	\n"+
+		"ACVChurnAndExpansionTableData = data;   					\n"+
+		"}								\n"+
+		"								\n"+
+		"								\n"+
+		"								\n"+
+		"								\n"+
+		"								\n"+
 		"</script>						\n"+	
 		"</head>						\n";
 	var fileString = htmlHeader +
@@ -89,30 +142,14 @@ function produceReportPage( outputPath, profileJSON){
 	"	 <div id='" + reportID + "'></div>\n"+
 	"<!-- graph script -->\n"+
 	"	 <script>\n"+
-	"        d3.json('/data/viewdata/"+ dataFile +"', function(data) {\n"+
-	"            for (var i = 0; i < data.length; i++) { \n"+
-    "                data[i] = MG.convert.date(data[i], 'period');\n"+
-    "                }\n"+
-	"            MG.data_graphic({\n"+
-	"                title: '" + title + "',\n"+
-	"                description: '" + description + "',\n"+
-	"                error: '" + errorMessage + "',\n"+
-	"                data: data,\n"+
-	"                // auto resizing\n"+
-	"                full_width: 'true',\n"+
-	"                height: 300,\n"+
-	" 				 area: false , \n" +
-	"                //room for labels\n"+
-	"                right: 120,\n"+
-	"                //room for y axis label\n"+
-	"                left: 100,\n"+
-	"                target: '#" + reportID + "',\n"+
-	"                legend:[" + labels + "],\n"+
-	"                x_accessor: 'period',\n"+
-	"                y_accessor: 'value' ,\n"+
-	"                y_label: '" + yLabel + "'\n"+
-	"            })\n"+
-	"        })\n"+
+	"		var ACVChurnAndExpansionTableData; 							\n" +		
+	"        d3.json('/data/viewdata/"+ dataFile +"', function(data) {	\n"+
+	"            for (var i = 0; i < data.length; i++) { 				\n"+
+    "                data[i] = MG.convert.date(data[i], 'period');		\n"+
+    "                }													\n"+
+    "			loadGraph(data); 										\n"+
+    "			ACVChurnAndExpansionTableData = data; 					\n" +
+	"        })															\n"+
 	"     </script>\n"+
 	"<!-- end of graph script  -->               \n"
 
@@ -173,8 +210,9 @@ function produceDataFile (input, outputDataPath, outputHtmlPath, profileJSON) {
 	// produce html table contents based on generated array
 	// one row for each value set
 	var htmlDataFile = outputHtmlPath + profileJSON.htmlFilePath + profileJSON.reportID + "Data.html";
-	var htmlDataTable = "<div bgcolor='#A9A9F5'> \n" +
-		"   <table style='table-layout: fixed' bgcolor='#F6D8CE' width='100%'  border='1' cellspacing='2' cellpadding='0'> \n";
+	var htmlDataTable = 
+		"<div bgcolor='#A9A9F5'> \n" +
+		"   <table id='dataTable' style='table-layout: fixed' bgcolor='#F6D8CE' width='100%'  border='1' cellspacing='2' cellpadding='0'> \n";
 	
 	htmlDataTable = htmlDataTable + "      <tr align='center'> <th> </th>";
 	for (i=1; i<profileJSON.periodLabels.length; i++){
@@ -191,7 +229,8 @@ function produceDataFile (input, outputDataPath, outputHtmlPath, profileJSON) {
 	}
 	htmlDataTable = htmlDataTable +
 		"   </table> \n"+ 
-		"</div";
+		"</div>\n";
+
 	// write html Data file 
 	// write contents to viewer data source directory
 	console.log('writing html data file ' + htmlDataFile);

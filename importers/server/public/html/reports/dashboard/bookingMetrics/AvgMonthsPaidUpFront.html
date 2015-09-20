@@ -16,7 +16,7 @@ function showHide(elementID)
 	}							
 	else {						
 		showingPage = true;		
-    document.getElementById(elementID).innerHTML = " <iframe src='./AvgMonthsPaidUpFrontData.html' width='100%' />" ;
+    document.getElementById(elementID).innerHTML = " 		<input type='button' value='Redraw the graph with your changes' onClick='updateFromTable(ACVChurnAndExpansionTableData)'/> 		<iframe src='./AvgMonthsPaidUpFrontData.html' height='250' width='100%' />" ;
 	}    						
 								
 								
@@ -26,22 +26,10 @@ function clearBox(elementID)
 {								
     document.getElementById(elementID).innerHTML = "";
 }								
-</script>						
-</head>						
-<body bgcolor='#CED8F6' >
-	 <div>
-	<div>										 
-		<input type='button' id='ShowHide' value='Show/Hide Data' onclick='showHide("DataTable")'/> 
-	</div>										
-	<div id='DataTable'></div> 					
-<br/>
-	 <div id='AvgMonthsPaidUpFront'></div>
-<!-- graph script -->
-	 <script>
-        d3.json('/data/viewdata/AvgMonthsPaidUpFront.json', function(data) {
-            for (var i = 0; i < data.length; i++) { 
-                data[i] = MG.convert.date(data[i], 'period');
-                }
+								
+								
+function loadGraph(data)								
+{								
             MG.data_graphic({
                 title: 'Average Months Paid Up Front',
                 description: 'Average Months Paid Up Front',
@@ -60,8 +48,54 @@ function clearBox(elementID)
                 x_accessor: 'period',
                 y_accessor: 'value' ,
                 y_label: ' '
-            })
-        })
+            });
+}								
+								
+								
+function updateFromTable(data){ 										
+// index through the table data cells and copy to the array 			
+var rows = window.frames[window.frames.length - 1].document.getElementById('dataTable').rows;	
+// iterate through each row in this specific table						
+// each row is an item in the JSON model								
+// each cell is a value in the JSON model   							
+// loop through rows, skip row 1 and labels in column 1				
+for(var i = 1, outputi = 0, rowCnt = rows.length; i < rowCnt; i++, outputi++) {	
+	//in each row iterate through the cells											
+    for(var j=1, outputj =0,cellCnt = rows[i].children.length; j < cellCnt; j++, outputj++) { 	
+     	// period data is reused from prior usage												
+	    data[outputi][outputj].value = rows[i].children[j].firstChild.data;						
+     }																							
+  }							
+// refresh the graph 			
+loadGraph(data); 				
+// save results in case transient data object was input 	
+ACVChurnAndExpansionTableData = data;   					
+}								
+								
+								
+								
+								
+								
+</script>						
+</head>						
+<body bgcolor='#CED8F6' >
+	 <div>
+	<div>										 
+		<input type='button' id='ShowHide' value='Show/Hide Data' onclick='showHide("DataTable")'/> 
+	</div>										
+	<div id='DataTable'></div> 					
+<br/>
+	 <div id='AvgMonthsPaidUpFront'></div>
+<!-- graph script -->
+	 <script>
+		var ACVChurnAndExpansionTableData; 							
+        d3.json('/data/viewdata/AvgMonthsPaidUpFront.json', function(data) {	
+            for (var i = 0; i < data.length; i++) { 				
+                data[i] = MG.convert.date(data[i], 'period');		
+                }													
+			loadGraph(data); 										
+			ACVChurnAndExpansionTableData = data; 					
+        })															
      </script>
 <!-- end of graph script  -->               
 <!-- footer -->							

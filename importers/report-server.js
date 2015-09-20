@@ -36,19 +36,62 @@ function processPost(request, response, callback) {
 
 
 var server = express();
+var qs = require('querystring');
 server.use(express.static(__dirname + '/server/public'));
 
 
 var servicePort = 10000;
 
 var serviceServer = http.createServer(function(request, response) {
-    console.log("request method: " + request.method);
+	  // request is an http.IncomingMessage, which is a Readable Stream
+	  // response is an http.ServerResponse, which is a Writable Stream
+
+    var body = '';
+    request.setEncoding('utf8');
+
+    // Readable streams emit 'data' events once a listener is added
+    request.on('data', function (chunk) {
+      body += chunk;
+    });
+
+    // the end event tells you that you have entire body
+	var data;
+    request.on('end', function () {
+    	console.log(body);
+
+      try {
+        data = JSON.parse(body);
+      } catch (er) {
+        // uh oh!  bad json!
+        response.statusCode = 400;
+        return response.end('error: ' + er.message);
+      }
+
+      // write back something interesting to the user:
+      response.write(typeof data);
+      response.end();
+    });
+ 
+    
+	console.log("request method: " + request.method);
+	var fs = require('fs');
+
+    
 	if(request.method === 'POST') {
         processPost(request, response, function() {
-            console.log(request.post);
-            // Use request.post here
+            //console.log(JSON.stringify(request.post, null, 3));
+        	//console.log(request.headers);
+        	//console.log(request.url);
+        	fs.writeFile("dump.json", JSON.stringify(data, null, 3), function (err) {
+        		if (err) { throw err; } 
+        		console.log('dumped post data to dump.json');
+        	});
 
+        	
+        	
+        	//var postJSON= JSON.parse(request.post);
             response.writeHead(200, "OK", {'Content-Type': 'text/plain'});
+           
             response.end();
         });
     } else {
@@ -58,7 +101,7 @@ var serviceServer = http.createServer(function(request, response) {
 });
 //server.listen(__dirname + '/server/public');
 serviceServer.listen(servicePort,  function() {
-	path.normalize(__dirname + '/server/public');
+	//path.normalize(__dirname + '/server/public');
     console.log('My node service server is listening on port ' + servicePort);
   
 });
