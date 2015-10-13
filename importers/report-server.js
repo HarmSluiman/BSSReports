@@ -75,15 +75,25 @@ var serviceServer = http.createServer(function(request, response) {
     
 	console.log("request method: " + request.method);
 	var fs = require('fs');
+	var filename = 'fullAnnualContractInput.json';
+	var targetdir = './server/private/data/viewdata/fullset/';
 
     
 	if(request.method === 'POST') {
         processPost(request, response, function() {
             //console.log(JSON.stringify(request.post, null, 3));
         	//console.log(request.headers);
-        	//console.log(request.url);
+        	console.log(request.url);
         	fs.writeFile("dump.json", JSON.stringify(data, null, 3), function (err) {
         		if (err) { throw err; } 
+        		if (request.url === '/fullAnnualContract/'){
+        			// write fullset contents to viewer data source directory
+//        			console.log('writing full set data file ' + filename);
+        			fs.writeFile(targetdir + filename, JSON.stringify(data, null, 3), function (err) {
+        				if (err) { throw err; } 
+//        					console.log(' data saved');
+        			});
+        		}
         		console.log('dumped post data to dump.json');
         	});
 

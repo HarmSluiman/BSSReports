@@ -10,10 +10,10 @@ function cloner (input, filename) {
 	var fs = require('fs');
 	if (input) {
 		// write contents to viewer data source directory
-		console.log('writing data file ' + filename);
+//		console.log('writing data file ' + filename);
 		fs.writeFile(filename, input, function (err) {
 			if (err) { throw err; } 
-			console.log('saved');
+//			console.log('saved');
 		});
 	}
 }
@@ -26,7 +26,6 @@ exports.watcher = function () {
 		console.log('event is: ' + event);
 		if (event === 'change'){
 			if (filename) {
-				console.log('filename provided: ' + filename);
 				// read the modified file and push to cloner
 				var data;
 				fs.readFile('./server/public/data/dropbox/' + filename, function (err, data) {
@@ -49,7 +48,6 @@ exports.watcher = function () {
 		console.log('event is: ' + event);
 		if (event === 'change'){
 			if (filename) {
-				console.log('filename provided: ' + filename);
 				// read the modified file and push to cloner
 				var profile;
 				fs.readFile('./server/public/data/dropbox/reportProfiles/' + filename, function (err, profile) {

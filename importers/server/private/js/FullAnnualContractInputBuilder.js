@@ -30,6 +30,15 @@ exports.generateHtmlFromJSON = function (inputJSON){
 		"														\n"+
 		"</script>												\n"+
 		"<script>												\n"+
+		"	function setMessageArea(input) \n"+
+		"	{								\n"+
+		"		if (input !== '') {							\n"+
+		"      		document.getElementById('messageArea').innerHTML = '<p>'+input+'</p>'; \n"+
+		"		} else {							\n"+	
+		"      		document.getElementById('messageArea').innerHTML = ''; \n"+
+		"		}							\n"+	
+		"	}								\n"+
+		"								\n"+	
 		"	function initItem (inputArray, index) {  			\n"+
 		"		inputArray[index] = {name:'n' , values:[]};	  	\n"+
 		"	}													\n"+
@@ -42,7 +51,9 @@ exports.generateHtmlFromJSON = function (inputJSON){
 		" 		  'label': 'AnnualContractInput',  				\n"+
 		"  		  'items': [{									\n"+
 		"         'name': 'name',								\n"+
-		"         'values': [{'value':'\"v\"', 'period':'\"1\"'}]}]};			\n"+     
+		"         'values': [{'value':'\"v\"', 'period':'\"1\"'}]}]};			\n"+ 
+		"	   var cellData;								\n"+
+		"	   var messageString = '';												\n"+
 		"      var rows = document.getElementById('dataTable').rows;			\n"+
 		"      // iterate through each row in this specific table				\n"+
 		"      // each row is an item in the JSON model							\n"+
@@ -51,34 +62,50 @@ exports.generateHtmlFromJSON = function (inputJSON){
 		"      for(var i = 1, outputi = 0, rowCnt = rows.length; i < rowCnt; i++, outputi++) {  					\n"+
 		"         initItem(outputJSON.items,outputi);																\n"+
 		"         outputJSON.items[outputi].name = rows[i].firstElementChild.firstChild.data; 						\n"+
+        " 		  //column 0 of output is init/start data and ignored in reports but needs to be present			\n"+
+		"         initValue(outputJSON.items[outputi].values, 0); 													\n"+
+		"		  outputJSON.items[outputi].values[0].period = 0;													\n"+
+		"		  outputJSON.items[outputi].values[0].value = 0;													\n"+
+		"       																									\n"+
         " 		  //in each row iterate through the cells															\n"+
-        "   	  for(var j=1, outputj =0,cellCnt = rows[i].children.length; j < cellCnt; j++, outputj++) {			\n"+
+        "   	  for(var j=1, outputj = 1,cellCnt = rows[i].children.length; j < cellCnt; j++, outputj++) {			\n"+
 		"   		 initValue(outputJSON.items[outputi].values, outputj);											\n"+
 		"   	     // top row of table hold period values															\n"+
-		"    	     outputJSON.items[outputi].values[outputj].period = rows[0].children[j].innerHTML;				\n"+
-		"     	     outputJSON.items[outputi].values[outputj].value = rows[i].children[j].innerHTML;				\n"+
+		"    	     outputJSON.items[outputi].values[outputj].period = rows[0].children[j].firstChild.data;		\n"+
+	    "	         cellData = rows[i].children[j].firstChild.data;												\n"+
+		"		     if ( !isNaN(cellData)) {																		\n"+
+	    "	    	    outputJSON.items[outputi].values[outputj].value = cellData;									\n"+
+		"		     } else {																						\n"+
+		"			    messageString += cellData + ' is not a number. ';											\n"+
+		"		     }																								\n"+
 		"         }																									\n"+
 		"      }																									\n"+
-		"	   // for now do the post even though nothing will happen other than being swallowed by the server		\n"+
-		"      postTable('http://localhost:10000', JSON.stringify(outputJSON, null, 3));  							\n"+
+	    "	   setMessageArea(messageString);  																		\n"+
+		"	   // post the vlid data and trigger a refresh of the data files and profiled reports.  				\n"+
+		"      // if there was no bad data 																			\n"+
+		"      if (messageString === '') { 																			\n"+
+		"      // postTable('http://localhost:10000/fullAnnualContract/', JSON.stringify(outputJSON, null, 3));  	\n"+
+		"      	  postTable('http://localhost:10000/fullAnnualContract/', outputJSON);  							\n"+
+		"      } 																									\n"+
+		"       																									\n"+
 		"	     			\n"+
 		"   }				\n"+
-		"</script> 			\n"+
-"		\n"+
-		"<p>Once implemented, Submitting updated data from here will feed your raw input and regenerate \n"+
-		"the reports without and derived calculations. To provide new base data and allow \n"+
+		"</script> 			\n"+		
+		"</head>			\n"+
+		"					\n"+
+		"<p>Submitting updated data from here will feed your raw input and regenerate \n"+
+		"the reports without any derived calculations. To provide new base data and allow \n"+
 		"derived calculations, please submit new base data <a href='/html/NotImplementedYet.html'> here</a>.</p>\n"+
 		"							\n"+
 		"<button					\n"+
 		"	onclick='sendJSON()'> 	\n"+
 		"	submit the new data		\n"+
 		"</button>					\n"+
-	
-		"</head>						\n"+
+		"<div id='messageArea'></div> \n"+
 		"<body bgcolor='#A9A9F5'> \n" +
 		"   <table id='dataTable' style='table-layout: fixed' bgcolor='#F6D8CE' width='100%'  border='1' cellspacing='2' cellpadding='0'> \n";
 	
-	htmlDataTable = htmlDataTable + "      <tr align='center'> <th> </th>";
+	htmlDataTable = htmlDataTable + "      <tr align='center'> <th width='220'> </th>";
 	// use first object as template for all columns
 	var i;
 	var j;
@@ -88,7 +115,7 @@ exports.generateHtmlFromJSON = function (inputJSON){
 	htmlDataTable = htmlDataTable + "</tr> \n";
 		
 	for (i=0; i<inputJSON.items.length; i++){
-		htmlDataTable = htmlDataTable + "      <tr > <td align='left' width='30'>" + inputJSON.items[i].name + "</td> ";
+		htmlDataTable = htmlDataTable + "      <tr > <td align='left'>" + inputJSON.items[i].name + "</td> ";
 		for (j=1; j<inputJSON.items[i].values.length; j++){
 			htmlDataTable = htmlDataTable + "<td bgcolor='#CED8F6' contenteditable='true'>" + inputJSON.items[i].values[j].value + "</td>";
 		}
@@ -110,7 +137,7 @@ exports.generateHtmlFromJSON = function (inputJSON){
 
 /*
  * build
- * based on the input data this function does teh calculations and expansion to create the full data set 
+ * based on the input data this function does the calculations and expansion to create the full data set 
  * as used in the xls on the forEnterepreneurs.com site
  * in addition it will generate an html page with a table showing the full set of data
  */

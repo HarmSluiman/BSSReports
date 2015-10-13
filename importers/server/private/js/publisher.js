@@ -8,10 +8,10 @@ function cloner (input, filename) {
 	var fs = require('fs');
 	if (input) {
 		// write contents to viewer data source directory
-		console.log('writing data file ' + filename);
+//		console.log('writing data file ' + filename);
 		fs.writeFile(filename, input, function (err) {
 			if (err) { throw err; } 
-			console.log('saved');
+//			console.log('saved');
 		});
 	}
 }
@@ -43,7 +43,7 @@ exports.watcher = function () {
 		    console.log('filename not provided');
 		  }
 	});
-	console.log("Now watching server/private/data/viewdata/ for changes...");
+	console.log("Now watching /server/private/data/viewdata/ for changes...");
 
 	fs.watch('./server/private/html/dataTables/', function(event, filename){
 		console.log( filename + " will be published");		

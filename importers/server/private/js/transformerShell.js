@@ -57,6 +57,15 @@ function produceReportPage( outputPath, profileJSON){
 		"<script src='/lib/d3/d3.min.js' charset='utf-8'></script>\n" +
 		"<script src='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>\n" +
 		"<script>						\n"+
+		"function setMessageArea(input) \n"+
+		"{								\n"+
+		"	if (input !== '') {							\n"+
+		"      document.getElementById('messageArea').innerHTML = '<p>'+input+'</p>'; \n"+
+		"	} else {							\n"+	
+		"      document.getElementById('messageArea').innerHTML = ''; \n"+
+		"	}							\n"+	
+		"}								\n"+
+		"								\n"+	
 		"var showingPage = false;		\n"+
 		"function showHide(elementID)	\n"+
 		"{								\n"+
@@ -66,9 +75,14 @@ function produceReportPage( outputPath, profileJSON){
 		"	}							\n"+
 		"	else {						\n"+
 		"		showingPage = true;		\n"+
-		"    document.getElementById(elementID).innerHTML = \" "+
-		"		<input type='button' value='Redraw the graph with your changes' onClick='updateFromTable(ACVChurnAndExpansionTableData)'/> "+
-		"		<iframe src='./"+ reportID +"Data.html' height='250' width='100%' />\" ;\n"+
+		"    document.getElementById(elementID).innerHTML =  \n"+
+		"	\"	<input type='button' value='Redraw the graph with your changes' onClick='updateFromTable(ACVChurnAndExpansionTableData)'/> 	\"+	"+
+		"   \"  <p>Making changes to this data is temporary and will not impact any other chart. To reset the values to the original state	\"+	"+
+		"   \"  simply hide and reshow the data, and then redraw the graph.</p>																\"+	"+
+		"   \"  <p>In order to make changes that affect all the graphs you can either resubmit the base data or edit the resolved			\"+	"+
+		"   \"  full data set. To do this choose the Full Data Set Used link on the main page, or select <a href='/html/reports/dashboard/dataTables/fullAnnualContractData.html'>this link</a>.</p> \"+ "+
+		"	\"	<div id='messageArea'></div>	\"+	\n"+
+		"	\"	<iframe src='./"+ reportID +"Data.html' height='250' width='100%' />	\" ;\n"+
 		"	}    						\n"+
 		"								\n"+
 		"								\n"+
@@ -112,13 +126,21 @@ function produceReportPage( outputPath, profileJSON){
 	    "// each row is an item in the JSON model								\n"+		
 	    "// each cell is a value in the JSON model   							\n"+		
 	    "// loop through rows, skip row 1 and labels in column 1				\n"+							
+		"var cellData;								\n"+
+		"var messageString = '';												\n"+
 	    "for(var i = 1, outputi = 0, rowCnt = rows.length; i < rowCnt; i++, outputi++) {	\n"+  						
 	 	"	//in each row iterate through the cells											\n"+				
 	   	"    for(var j=1, outputj =0,cellCnt = rows[i].children.length; j < cellCnt; j++, outputj++) { 	\n"+														
 	   	"     	// period data is reused from prior usage												\n"+		
-	    "	    data[outputi][outputj].value = rows[i].children[j].firstChild.data;						\n"+
-	    "     }																							\n"+			
-	    "  }							\n"+
+	    "	    cellData = rows[i].children[j].firstChild.data;						\n"+
+		"		if ( !isNaN(cellData)) {						\n"+
+	    "	    	data[outputi][outputj].value = cellData;						\n"+
+		"		} else {						\n"+
+		"			messageString += cellData + ' is not a number. ';					\n"+
+		"		}						\n"+
+	    "    }																							\n"+			
+	    "}							\n"+
+	    "setMessageArea(messageString);  							\n"+
 		"// refresh the graph 			\n"+
 		"loadGraph(data); 				\n"+
 		"// save results in case transient data object was input 	\n"+
@@ -179,10 +201,10 @@ function produceReportPage( outputPath, profileJSON){
 
 	var fs = require('fs');
 	var target = outputPath + htmlFile;
-	console.log('writing html file ' + target);
+//	console.log('writing html file ' + target);
 	fs.writeFile(target, fileString, function (err) {
 		if (err) { throw err; } 
-		console.log('saved');
+//		console.log('saved');
 	});
 }
 /*
@@ -233,26 +255,26 @@ function produceDataFile (input, outputDataPath, outputHtmlPath, profileJSON) {
 
 	// write html Data file 
 	// write contents to viewer data source directory
-	console.log('writing html data file ' + htmlDataFile);
+//	console.log('writing html data file ' + htmlDataFile);
 	fs.writeFile(htmlDataFile, htmlDataTable, function (err) {
 		if (err) { throw err; } 
-		console.log('saved');
+//		console.log('saved');
 	});
 
 	// stringify outputJSON 
 	var output = JSON.stringify(outputArray, null, 3);
 	if (output) {
 		// write contents to viewer data source directory
-		console.log('writing data file ' + dataTarget);
+//		console.log('writing data file ' + dataTarget);
 		fs.writeFile(dataTarget, output, function (err) {
 			if (err) { throw err; } 
-			console.log('saved');
+//			console.log('saved');
 		});
 	}
 }
 function processProfile (data, profile, outputHtmlPath, outputDataPath){
 	var fs = require('fs');
-	console.log("runing profile:"+ profile);
+	console.log("runing profile: "+ profile);
 	var profileData;
 	fs.readFile(profile, function (err, profileData) {
 		if (err) {
@@ -288,18 +310,20 @@ exports.watcher = function () {
 					console.log("number of profile files:"+ fileList.length);
 					for(var i=0; i < fileList.length; i++ ){
 						processProfile(data, profilePath + fileList[i], outputHtmlPath, outputDataPath);
-//						var profileData;
-//						fs.readFile(profilePath + fileList[i], function (err, profileData) {
-//							if (err) {
-//								throw err;	
-//							} else {
-//								var profileJSON = JSON.parse(profileData);
-//								produceDataFile(data, outputDataPath, outputHtmlPath, profileJSON);
-//								produceReportPage(outputHtmlPath, profileJSON);
-//							}
-//						});
-											}
-				});				
+					}
+				});	
+				// produce html view of full set Data
+				var builder = require('./FullAnnualContractInputBuilder.js');
+				// write data and html to viewer source directory
+				var targetDataTableDir = './server/private/html/dataTables/';
+				var outputHtmlData = builder.generateHtmlFromJSON(JSON.parse(data));		
+//				console.log('writing full set html data file ' + filename);
+				fs.writeFile(targetDataTableDir + "fullAnnualContractData.html", outputHtmlData, function (err) {
+					if (err) { throw err; } 
+//					console.log(' data html saved');
+				});
+
+
 			}
 		});
 	});
