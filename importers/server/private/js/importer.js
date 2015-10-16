@@ -15,7 +15,7 @@ function cloner (input, filename) {
 		inputJSON = JSON.parse(input);
 		// assert that output structure is the same but bigger than input to avoid cloning isssues
 		outputJSON = JSON.parse(input);
-		// monitor for input dropbox files and move to private area
+		// parse input and laod it intot he full data set needed to produce all the reports
 		var builder = require('./FullAnnualContractInputBuilder.js');
 		builder.build(inputJSON, outputJSON);		
 		// write fullset contents to viewer data source directory
