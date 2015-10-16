@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="copyright" content="© Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission." />
+
+<link href='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.css'
+	rel='stylesheet' type='text/css'>
+<script src='/lib/jquery/jquery-1.11.3.min.js'
+	type="text/javascript"></script>
+<script src='/lib/d3/d3.min.js' charset='utf-8'
+	type="text/javascript"></script>
+<script src='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'
+	type="text/javascript"></script>
+
+</head>
+<body bgcolor="#A9A9F5"> 
+<!-- header -->
+<table>
+<th width="100%" align="center">
+   <img id="logo" src="/graphics/Website_under_construction.gif" alt="under construction" width ="5%" height = "5%"/>
+</th>
+</table>
+<hr/>
+<!-- end of header --> 
+<p>For an explanation of Unit Economics in this context please see this <a href='http://www.forentrepreneurs.com/saas-metrics-2/#Unit_Economics_in_Action_HubSpot_Example'>link</a>.</p>
+
+	<table style="table-layout: fixed" width="800" bgcolor="#F6D8CE">
+		<tr>
+			<td>
+				<table bgcolor="#F6D8CE" width="790" >
+					<tr>
+						<td align="center">
+							Unit Economics
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table bgcolor="#F6D8CE" >
+					<tr>
+						<td bgcolor="#CED8F6" width="380" height="150" align="center" valign="top">
+							<button
+								onclick="window.location.href='/html/reports/dashboard/unitEconomics/LTVandCAC.html'">
+								LTV and CAC
+							</button>
+							<div id="LTVandCACCell"></div>											
+						</td>					
+					</tr>		
+				</table> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table bgcolor="#F6D8CE" width="800">
+					<tr>
+						<td bgcolor="#CED8F6" width="265" height="125" align="center" valign="top">
+							<button
+								onclick="window.location.href='/html/reports/dashboard/unitEconomics/LTVToCACRatio.html'">
+								LTV to CAC Ratio
+							</button>
+							<div id="LTVToCACRatioCell"></div>
+						</td>
+						<td width="2" height="125">
+						</td>
+						<td bgcolor="#CED8F6" width="265" height="125" align="center" valign="top">
+							<button
+								onclick="window.location.href='/html/reports/dashboard/unitEconomics/MonthsToRecoverCAC.html'">
+								Months to Recover CAC
+							</button>
+							<div id="MonthsToRecoverCACCell"></div>
+						</td>
+						<td width="2" height="125">
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+<script type="text/javascript">
+
+	d3.json('/data/viewdata/LTVandCAC.json', function(data) {
+		d3.time.format('%B');
+		for ( var i = 0; i < data.length; i++) {
+			data[i] = MG.convert.date(data[i], 'period');
+		}
+		MG.data_graphic({
+			data : data,
+			// auto resizing
+			full_width : 'true',
+			height : 125,
+			area : false,
+			//room for labels
+            right: 120,
+			linked: true,
+			small_text : 'true',
+			target : '#LTVandCACCell',
+			legend:['LTV','CAC'],
+			x_accessor : 'period',
+			y_accessor : 'value'
+		})
+	})
+
+		d3.json('/data/viewdata/LTVToCACRatio.json', function(data) {
+			d3.time.format('%B');
+			for ( var i = 0; i < data.length; i++) {
+				data[i] = MG.convert.date(data[i], 'period');
+			}
+			MG.data_graphic({
+				data : data,
+				// auto resizing
+				full_width : 'true',
+				height : 125,
+				area : false,
+				linked: true,
+				small_text : 'true',
+				target : '#LTVToCACRatioCell',
+				x_accessor : 'period',
+				y_accessor : 'value'
+			})
+		})
+
+		d3.json('/data/viewdata/MonthsToRecoverCAC.json', function(data) {
+			d3.time.format('%B');
+			for ( var i = 0; i < data.length; i++) {
+				data[i] = MG.convert.date(data[i], 'period');
+			}
+			MG.data_graphic({
+				data : data,
+				// auto resizing
+				full_width : 'true',
+				height : 125,
+				area : false,
+				linked: true,
+				small_text : 'true',
+				target : '#MonthsToRecoverCACCell',
+				x_accessor : 'period',
+				y_accessor : 'value'
+			})
+		})
+	</script>
+	<!-- end of graph script  -->
+<!-- footer -->
+<hr/>
+<table>
+<th width="100%" align="center">
+&copy; Copyright 2015 by 9250891 CANADA INC.. All rights reserved. This material may not be duplicated without written permission.
+</th>
+</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{"name":           "ProductivityPerFTE",
+	"description": "Productivity per full time equivalent sales rep",
+	"errorMessage":"An error occured while producing the chart.",
+	"reportID":    "ProductivityPerFTE",
+	"title":       " Productivity per FTE Rep ",
+	"dataFilePath":    "",
+	"htmlFilePath":    "funnelMetrics/",
+	"keys":        ["ProductivityPerfTE"],
+	"labels":      ["' '"],
+	"yLabel":      " ",
+	"periodLabels":
+	["seed", 
+	 "2015-01-01",
+	 "2015-02-01",	 
+	 "2015-03-01",	  
+	 "2015-04-01",	 
+	 "2015-05-01",	 
+	 "2015-06-01",	 
+	 "2015-07-01",	 
+	 "2015-08-01"
+	]    
+}  
+

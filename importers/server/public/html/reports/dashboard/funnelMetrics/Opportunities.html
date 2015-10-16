@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='copyright' content='� Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />
+<link href='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>
+<script src='/lib/jquery/jquery-1.11.3.min.js'></script>
+<script src='/lib/d3/d3.min.js' charset='utf-8'></script>
+<script src='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>
+<script>						
+function setMessageArea(input) 
+{								
+	if (input !== '') {							
+      document.getElementById('messageArea').innerHTML = '<p>'+input+'</p>'; 
+	} else {							
+      document.getElementById('messageArea').innerHTML = ''; 
+	}							
+}								
+								
+var showingPage = false;		
+function showHide(elementID)	
+{								
+	if (showingPage){			
+		showingPage = false;	
+		clearBox(elementID);	
+	}							
+	else {						
+		showingPage = true;		
+    document.getElementById(elementID).innerHTML =  
+	"	<input type='button' value='Redraw the graph with your changes' onClick='updateFromTable(ACVChurnAndExpansionTableData)'/> 	"+	   "  <p>Making changes to this data is temporary and will not impact any other chart. To reset the values to the original state	"+	   "  simply hide and reshow the data, and then redraw the graph.</p>																"+	   "  <p>In order to make changes that affect all the graphs you can either resubmit the base data or edit the resolved			"+	   "  full data set. To do this choose the Full Data Set Used link on the main page, or select <a href='/html/reports/dashboard/dataTables/fullAnnualContractData.html'>this link</a>.</p> "+ 	"	<div id='messageArea'></div>	"+	
+	"	<iframe src='./OpportunitiesData.html' height='250' width='100%' />	" ;
+	}    						
+								
+								
+}								
+								
+function clearBox(elementID)	
+{								
+    document.getElementById(elementID).innerHTML = "";
+}								
+								
+								
+function loadGraph(data)								
+{								
+            MG.data_graphic({
+                title: ' Opportunities ',
+                description: 'Opportunities',
+                error: 'An error occured while producing the chart.',
+                data: data,
+                // auto resizing
+                full_width: 'true',
+                height: 300,
+ 				 area: false , 
+                //room for labels
+                right: 120,
+                //room for y axis label
+                left: 100,
+                target: '#Opportunities',
+                legend:[' '],
+                x_accessor: 'period',
+                y_accessor: 'value' ,
+                y_label: ' '
+            });
+}								
+								
+								
+function updateFromTable(data){ 										
+// index through the table data cells and copy to the array 			
+var rows = window.frames[window.frames.length - 1].document.getElementById('dataTable').rows;	
+// iterate through each row in this specific table						
+// each row is an item in the JSON model								
+// each cell is a value in the JSON model   							
+// loop through rows, skip row 1 and labels in column 1				
+var cellData;								
+var messageString = '';												
+for(var i = 1, outputi = 0, rowCnt = rows.length; i < rowCnt; i++, outputi++) {	
+	//in each row iterate through the cells											
+    for(var j=1, outputj =0,cellCnt = rows[i].children.length; j < cellCnt; j++, outputj++) { 	
+     	// period data is reused from prior usage												
+	    cellData = rows[i].children[j].firstChild.data;						
+		if ( !isNaN(cellData)) {						
+	    	data[outputi][outputj].value = cellData;						
+		} else {						
+			messageString += cellData + ' is not a number. ';					
+		}						
+    }																							
+}							
+setMessageArea(messageString);  							
+// refresh the graph 			
+loadGraph(data); 				
+// save results in case transient data object was input 	
+ACVChurnAndExpansionTableData = data;   					
+}								
+								
+								
+								
+								
+								
+</script>						
+</head>						
+<body bgcolor='#CED8F6' >
+	 <div>
+	<div>										 
+		<input type='button' id='ShowHide' value='Show/Hide Data' onclick='showHide("DataTable")'/> 
+	</div>										
+	<div id='DataTable'></div> 					
+<br/>
+	 <div id='Opportunities'></div>
+<!-- graph script -->
+	 <script>
+		var ACVChurnAndExpansionTableData; 							
+        d3.json('/data/viewdata/Opportunities.json', function(data) {	
+            for (var i = 0; i < data.length; i++) { 				
+                data[i] = MG.convert.date(data[i], 'period');		
+                }													
+			loadGraph(data); 										
+			ACVChurnAndExpansionTableData = data; 					
+        })															
+     </script>
+<!-- end of graph script  -->               
+<!-- footer -->							
+<hr/>										
+<table>									
+<th width='100%' align='center'>			
+&copy; Copyright 2015 by 9250891 CANADA INC.. All rights reserved. This material may not be duplicated without written permission.
+</th>										
+</table>									
+</body>                                     
+</html>                                     

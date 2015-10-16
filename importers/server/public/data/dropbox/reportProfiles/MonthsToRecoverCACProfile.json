@@ -1,0 +1,22 @@
+{"name":           "MonthsToRecoverCAC",
+	"description": "Months to recover CAC",
+	"errorMessage":"An error occured while producing the chart.",
+	"reportID":    "MonthsToRecoverCAC",
+	"title":       "Months to recover CAC",
+	"dataFilePath":    "",
+	"htmlFilePath":    "unitEconomics/",  
+	"keys":        ["MonthsToRecoverCAC"],
+	"labels":      ["''"],
+	"yLabel":      " ",
+	"periodLabels":
+	["seed",  
+	 "2015-01-01",
+	 "2015-02-01",	 
+	 "2015-03-01",	 
+	 "2015-04-01",	 
+	 "2015-05-01",	 
+	 "2015-06-01",	 
+	 "2015-07-01",	 
+	 "2015-08-01"
+	]    
+}  

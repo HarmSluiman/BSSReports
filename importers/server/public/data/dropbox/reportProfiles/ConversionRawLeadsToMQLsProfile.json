@@ -1,0 +1,23 @@
+{"name":           "ConversionRawLeadsToMQLs",
+	"description": "ConversionRawLeadsToMQLs",
+	"errorMessage":"An error occured while producing the chart.",
+	"reportID":    "ConversionRawLeadsToMQLs",
+	"title":       " Conversion of Raw Leads to MQLs ",
+	"dataFilePath":    "",
+	"htmlFilePath":    "funnelMetrics/",
+	"keys":        ["ConversionRawLeadsToMQLs"],
+	"labels":      ["' '"],
+	"yLabel":      " ",
+	"periodLabels":
+	["seed",
+	 "2015-01-01",
+	 "2015-02-01",	 
+	 "2015-03-01",	  
+	 "2015-04-01",	 
+	 "2015-05-01",	 
+	 "2015-06-01",	 
+	 "2015-07-01",	 
+	 "2015-08-01"
+	]    
+}  
+

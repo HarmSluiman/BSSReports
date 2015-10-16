@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='copyright' content='� Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />
+			
+			
+<script src='/js/postTable.js'>						
+														
+</script>												
+<script>												
+	function setMessageArea(input) 
+	{								
+		if (input !== '') {							
+      		document.getElementById('messageArea').innerHTML = '<p>'+input+'</p>'; 
+		} else {							
+      		document.getElementById('messageArea').innerHTML = ''; 
+		}							
+	}								
+								
+	function initItem (inputArray, index) {  			
+		inputArray[index] = {name:'n' , values:[]};	  	
+	}													
+	function initValue (inputArray, index){  			
+		inputArray[index] = {value:'v', period:'1'};  	
+	}													
+ 														
+   function sendJSON() { 								
+      var outputJSON =	 {								
+ 		  'label': 'AnnualContractInput',  				
+  		  'items': [{									
+         'name': 'name',								
+         'values': [{'value':'"v"', 'period':'"1"'}]}]};			
+	   var cellData;								
+	   var messageString = '';												
+      var rows = document.getElementById('dataTable').rows;			
+      // iterate through each row in this specific table				
+      // each row is an item in the JSON model							
+      // each cell is a value in the JSON model   						
+      // loop through rows, skip row 1									
+      for(var i = 1, outputi = 0, rowCnt = rows.length; i < rowCnt; i++, outputi++) {  					
+         initItem(outputJSON.items,outputi);																
+         outputJSON.items[outputi].name = rows[i].firstElementChild.firstChild.data; 						
+ 		  //column 0 of output is init/start data and ignored in reports but needs to be present			
+         initValue(outputJSON.items[outputi].values, 0); 													
+		  outputJSON.items[outputi].values[0].period = 0;													
+		  outputJSON.items[outputi].values[0].value = 0;													
+       																									
+ 		  //in each row iterate through the cells															
+   	  for(var j=1, outputj = 1,cellCnt = rows[i].children.length; j < cellCnt; j++, outputj++) {			
+   		 initValue(outputJSON.items[outputi].values, outputj);											
+   	     // top row of table hold period values															
+    	     outputJSON.items[outputi].values[outputj].period = rows[0].children[j].firstChild.data;		
+	         cellData = rows[i].children[j].firstChild.data;												
+		     if ( !isNaN(cellData)) {																		
+	    	    outputJSON.items[outputi].values[outputj].value = cellData;									
+		     } else {																						
+			    messageString += cellData + ' is not a number. ';											
+		     }																								
+         }																									
+      }																									
+	   setMessageArea(messageString);  																		
+	   // post the vlid data and trigger a refresh of the data files and profiled reports.  				
+      // if there was no bad data 																			
+      if (messageString === '') { 																			
+      // postTable('http://localhost:10000/fullAnnualContract/', JSON.stringify(outputJSON, null, 3));  	
+      	  postTable('http://localhost:10000/fullAnnualContract/', outputJSON);  							
+      } 																									
+       																									
+	     			
+   }				
+</script> 			
+</head>			
+					
+<p>Submitting updated data from here will feed your raw input and regenerate 
+the reports without any derived calculations. To provide new base data and allow 
+derived calculations, please submit new base data <a href='/html/NotImplementedYet.html'> here</a>.</p>
+							
+<button					
+	onclick='sendJSON()'> 	
+	submit the new data		
+</button>					
+<div id='messageArea'></div> 
+<body bgcolor='#A9A9F5'> 
+   <table id='dataTable' style='table-layout: fixed' bgcolor='#F6D8CE' width='100%'  border='1' cellspacing='2' cellpadding='0'> 
+      <tr align='center'> <th width='220'> </th> <th>1</th>  <th>2</th>  <th>3</th>  <th>4</th>  <th>5</th>  <th>6</th> </tr> 
+      <tr > <td align='left'>Bookings</td> <td bgcolor='#CED8F6' contenteditable='true'>264</td><td bgcolor='#CED8F6' contenteditable='true'>276</td><td bgcolor='#CED8F6' contenteditable='true'>294</td><td bgcolor='#CED8F6' contenteditable='true'>312</td><td bgcolor='#CED8F6' contenteditable='true'>324</td><td bgcolor='#CED8F6' contenteditable='true'>348</td></tr> 
+      <tr > <td align='left'>AverageACV</td> <td bgcolor='#CED8F6' contenteditable='true'>6600</td><td bgcolor='#CED8F6' contenteditable='true'>6571</td><td bgcolor='#CED8F6' contenteditable='true'>6837</td><td bgcolor='#CED8F6' contenteditable='true'>6783</td><td bgcolor='#CED8F6' contenteditable='true'>6750</td><td bgcolor='#CED8F6' contenteditable='true'>6692</td></tr> 
+      <tr > <td align='left'>AverageContractTerm</td> <td bgcolor='#CED8F6' contenteditable='true'>1.3</td><td bgcolor='#CED8F6' contenteditable='true'>1.4</td><td bgcolor='#CED8F6' contenteditable='true'>1.4</td><td bgcolor='#CED8F6' contenteditable='true'>1.5</td><td bgcolor='#CED8F6' contenteditable='true'>1.4</td><td bgcolor='#CED8F6' contenteditable='true'>1.6</td></tr> 
+      <tr > <td align='left'>AverageMonthUpfront</td> <td bgcolor='#CED8F6' contenteditable='true'>5.5</td><td bgcolor='#CED8F6' contenteditable='true'>7</td><td bgcolor='#CED8F6' contenteditable='true'>5</td><td bgcolor='#CED8F6' contenteditable='true'>6.5</td><td bgcolor='#CED8F6' contenteditable='true'>5.8</td><td bgcolor='#CED8F6' contenteditable='true'>6.2</td></tr> 
+      <tr > <td align='left'>ARPAAverageMRR</td> <td bgcolor='#CED8F6' contenteditable='true'>550</td><td bgcolor='#CED8F6' contenteditable='true'>547.6</td><td bgcolor='#CED8F6' contenteditable='true'>569.8</td><td bgcolor='#CED8F6' contenteditable='true'>565.3</td><td bgcolor='#CED8F6' contenteditable='true'>562.5</td><td bgcolor='#CED8F6' contenteditable='true'>557.7</td></tr> 
+      <tr > <td align='left'>ARPAAcrossInstall</td> <td bgcolor='#CED8F6' contenteditable='true'>514.4</td><td bgcolor='#CED8F6' contenteditable='true'>521</td><td bgcolor='#CED8F6' contenteditable='true'>529.5</td><td bgcolor='#CED8F6' contenteditable='true'>537.9</td><td bgcolor='#CED8F6' contenteditable='true'>551.7</td><td bgcolor='#CED8F6' contenteditable='true'>561.8</td></tr> 
+      <tr > <td align='left'>NewACV</td> <td bgcolor='#CED8F6' contenteditable='true'>264</td><td bgcolor='#CED8F6' contenteditable='true'>276</td><td bgcolor='#CED8F6' contenteditable='true'>294</td><td bgcolor='#CED8F6' contenteditable='true'>312</td><td bgcolor='#CED8F6' contenteditable='true'>324</td><td bgcolor='#CED8F6' contenteditable='true'>348</td></tr> 
+      <tr > <td align='left'>ChurnACV</td> <td bgcolor='#CED8F6' contenteditable='true'>-100.8</td><td bgcolor='#CED8F6' contenteditable='true'>-134.6</td><td bgcolor='#CED8F6' contenteditable='true'>-108.3</td><td bgcolor='#CED8F6' contenteditable='true'>-107.4</td><td bgcolor='#CED8F6' contenteditable='true'>-106.2</td><td bgcolor='#CED8F6' contenteditable='true'>-106.1</td></tr> 
+      <tr > <td align='left'>ExpansionACV</td> <td bgcolor='#CED8F6' contenteditable='true'>24</td><td bgcolor='#CED8F6' contenteditable='true'>29.9</td><td bgcolor='#CED8F6' contenteditable='true'>25.8</td><td bgcolor='#CED8F6' contenteditable='true'>16.1</td><td bgcolor='#CED8F6' contenteditable='true'>83.9</td><td bgcolor='#CED8F6' contenteditable='true'>41.2</td></tr> 
+      <tr > <td align='left'>NetNewACV</td> <td bgcolor='#CED8F6' contenteditable='true'>187.2</td><td bgcolor='#CED8F6' contenteditable='true'>171.3</td><td bgcolor='#CED8F6' contenteditable='true'>211.5</td><td bgcolor='#CED8F6' contenteditable='true'>220.7</td><td bgcolor='#CED8F6' contenteditable='true'>301.6</td><td bgcolor='#CED8F6' contenteditable='true'>283.2</td></tr> 
+      <tr > <td align='left'>StartingArr</td> <td bgcolor='#CED8F6' contenteditable='true'>4800</td><td bgcolor='#CED8F6' contenteditable='true'>4987</td><td bgcolor='#CED8F6' contenteditable='true'>5158</td><td bgcolor='#CED8F6' contenteditable='true'>5369</td><td bgcolor='#CED8F6' contenteditable='true'>5590</td><td bgcolor='#CED8F6' contenteditable='true'>5892</td></tr> 
+      <tr > <td align='left'>EndingArr</td> <td bgcolor='#CED8F6' contenteditable='true'>4987</td><td bgcolor='#CED8F6' contenteditable='true'>5158</td><td bgcolor='#CED8F6' contenteditable='true'>5369</td><td bgcolor='#CED8F6' contenteditable='true'>5590</td><td bgcolor='#CED8F6' contenteditable='true'>5892</td><td bgcolor='#CED8F6' contenteditable='true'>6175</td></tr> 
+      <tr > <td align='left'>TotalNumCustomers</td> <td bgcolor='#CED8F6' contenteditable='true'>808</td><td bgcolor='#CED8F6' contenteditable='true'>825</td><td bgcolor='#CED8F6' contenteditable='true'>845</td><td bgcolor='#CED8F6' contenteditable='true'>866</td><td bgcolor='#CED8F6' contenteditable='true'>890</td><td bgcolor='#CED8F6' contenteditable='true'>916</td></tr> 
+      <tr > <td align='left'>NumNewCustomers</td> <td bgcolor='#CED8F6' contenteditable='true'>40</td><td bgcolor='#CED8F6' contenteditable='true'>42</td><td bgcolor='#CED8F6' contenteditable='true'>43</td><td bgcolor='#CED8F6' contenteditable='true'>46</td><td bgcolor='#CED8F6' contenteditable='true'>48</td><td bgcolor='#CED8F6' contenteditable='true'>52</td></tr> 
+      <tr > <td align='left'>NumChurnCustomers</td> <td bgcolor='#CED8F6' contenteditable='true'>-24</td><td bgcolor='#CED8F6' contenteditable='true'>-25</td><td bgcolor='#CED8F6' contenteditable='true'>-23</td><td bgcolor='#CED8F6' contenteditable='true'>-25</td><td bgcolor='#CED8F6' contenteditable='true'>-24</td><td bgcolor='#CED8F6' contenteditable='true'>-26</td></tr> 
+      <tr > <td align='left'>NetNewCustomers</td> <td bgcolor='#CED8F6' contenteditable='true'>16</td><td bgcolor='#CED8F6' contenteditable='true'>17</td><td bgcolor='#CED8F6' contenteditable='true'>20</td><td bgcolor='#CED8F6' contenteditable='true'>21</td><td bgcolor='#CED8F6' contenteditable='true'>24</td><td bgcolor='#CED8F6' contenteditable='true'>26</td></tr> 
+      <tr > <td align='left'>PercentCustomerChurn</td> <td bgcolor='#CED8F6' contenteditable='true'>3.03</td><td bgcolor='#CED8F6' contenteditable='true'>3.09</td><td bgcolor='#CED8F6' contenteditable='true'>2.79</td><td bgcolor='#CED8F6' contenteditable='true'>2.96</td><td bgcolor='#CED8F6' contenteditable='true'>2.77</td><td bgcolor='#CED8F6' contenteditable='true'>2.92</td></tr> 
+      <tr > <td align='left'>PercentACVChurn</td> <td bgcolor='#CED8F6' contenteditable='true'>2.1</td><td bgcolor='#CED8F6' contenteditable='true'>2.7</td><td bgcolor='#CED8F6' contenteditable='true'>2.1</td><td bgcolor='#CED8F6' contenteditable='true'>2</td><td bgcolor='#CED8F6' contenteditable='true'>1.9</td><td bgcolor='#CED8F6' contenteditable='true'>1.8</td></tr> 
+      <tr > <td align='left'>PercentACVExpansion</td> <td bgcolor='#CED8F6' contenteditable='true'>0.5</td><td bgcolor='#CED8F6' contenteditable='true'>0.6</td><td bgcolor='#CED8F6' contenteditable='true'>0.5</td><td bgcolor='#CED8F6' contenteditable='true'>0.3</td><td bgcolor='#CED8F6' contenteditable='true'>1.5</td><td bgcolor='#CED8F6' contenteditable='true'>0.7</td></tr> 
+      <tr > <td align='left'>PercentNetACVChurn</td> <td bgcolor='#CED8F6' contenteditable='true'>1.6</td><td bgcolor='#CED8F6' contenteditable='true'>2.1</td><td bgcolor='#CED8F6' contenteditable='true'>1.6</td><td bgcolor='#CED8F6' contenteditable='true'>1.7</td><td bgcolor='#CED8F6' contenteditable='true'>0.4</td><td bgcolor='#CED8F6' contenteditable='true'>1.1</td></tr> 
+      <tr > <td align='left'>CustomerEngagementScore</td> <td bgcolor='#CED8F6' contenteditable='true'>121</td><td bgcolor='#CED8F6' contenteditable='true'>120</td><td bgcolor='#CED8F6' contenteditable='true'>125</td><td bgcolor='#CED8F6' contenteditable='true'>126</td><td bgcolor='#CED8F6' contenteditable='true'>130</td><td bgcolor='#CED8F6' contenteditable='true'>135</td></tr> 
+      <tr > <td align='left'>NetPromoterScore</td> <td bgcolor='#CED8F6' contenteditable='true'>28</td><td bgcolor='#CED8F6' contenteditable='true'>27</td><td bgcolor='#CED8F6' contenteditable='true'>29</td><td bgcolor='#CED8F6' contenteditable='true'>32</td><td bgcolor='#CED8F6' contenteditable='true'>33</td><td bgcolor='#CED8F6' contenteditable='true'>35</td></tr> 
+      <tr > <td align='left'>LTV</td> <td bgcolor='#CED8F6' contenteditable='true'>21738</td><td bgcolor='#CED8F6' contenteditable='true'>16834</td><td bgcolor='#CED8F6' contenteditable='true'>22521</td><td bgcolor='#CED8F6' contenteditable='true'>23460</td><td bgcolor='#CED8F6' contenteditable='true'>24572</td><td bgcolor='#CED8F6' contenteditable='true'>25716</td></tr> 
+      <tr > <td align='left'>CAC</td> <td bgcolor='#CED8F6' contenteditable='true'>8750</td><td bgcolor='#CED8F6' contenteditable='true'>8571</td><td bgcolor='#CED8F6' contenteditable='true'>8605</td><td bgcolor='#CED8F6' contenteditable='true'>8261</td><td bgcolor='#CED8F6' contenteditable='true'>8125</td><td bgcolor='#CED8F6' contenteditable='true'>7692</td></tr> 
+      <tr > <td align='left'>LTVToCACRatio</td> <td bgcolor='#CED8F6' contenteditable='true'>2.5</td><td bgcolor='#CED8F6' contenteditable='true'>2</td><td bgcolor='#CED8F6' contenteditable='true'>2.6</td><td bgcolor='#CED8F6' contenteditable='true'>2.8</td><td bgcolor='#CED8F6' contenteditable='true'>3</td><td bgcolor='#CED8F6' contenteditable='true'>3.3</td></tr> 
+      <tr > <td align='left'>MonthsToRecoverCAC</td> <td bgcolor='#CED8F6' contenteditable='true'>19</td><td bgcolor='#CED8F6' contenteditable='true'>19</td><td bgcolor='#CED8F6' contenteditable='true'>18</td><td bgcolor='#CED8F6' contenteditable='true'>18</td><td bgcolor='#CED8F6' contenteditable='true'>17</td><td bgcolor='#CED8F6' contenteditable='true'>17</td></tr> 
+      <tr > <td align='left'>Invoiced</td> <td bgcolor='#CED8F6' contenteditable='true'>505</td><td bgcolor='#CED8F6' contenteditable='true'>515</td><td bgcolor='#CED8F6' contenteditable='true'>520</td><td bgcolor='#CED8F6' contenteditable='true'>490</td><td bgcolor='#CED8F6' contenteditable='true'>540</td><td bgcolor='#CED8F6' contenteditable='true'>560</td></tr> 
+      <tr > <td align='left'>Revenue</td> <td bgcolor='#CED8F6' contenteditable='true'>4987</td><td bgcolor='#CED8F6' contenteditable='true'>5158</td><td bgcolor='#CED8F6' contenteditable='true'>5369</td><td bgcolor='#CED8F6' contenteditable='true'>5590</td><td bgcolor='#CED8F6' contenteditable='true'>5892</td><td bgcolor='#CED8F6' contenteditable='true'>6175</td></tr> 
+      <tr > <td align='left'>COGS</td> <td bgcolor='#CED8F6' contenteditable='true'>848</td><td bgcolor='#CED8F6' contenteditable='true'>877</td><td bgcolor='#CED8F6' contenteditable='true'>913</td><td bgcolor='#CED8F6' contenteditable='true'>950</td><td bgcolor='#CED8F6' contenteditable='true'>1002</td><td bgcolor='#CED8F6' contenteditable='true'>1050</td></tr> 
+      <tr > <td align='left'>GrossMargin</td> <td bgcolor='#CED8F6' contenteditable='true'>4139</td><td bgcolor='#CED8F6' contenteditable='true'>4281</td><td bgcolor='#CED8F6' contenteditable='true'>4456</td><td bgcolor='#CED8F6' contenteditable='true'>4640</td><td bgcolor='#CED8F6' contenteditable='true'>4890</td><td bgcolor='#CED8F6' contenteditable='true'>5125</td></tr> 
+      <tr > <td align='left'>GrossMarginPercent</td> <td bgcolor='#CED8F6' contenteditable='true'>83</td><td bgcolor='#CED8F6' contenteditable='true'>83</td><td bgcolor='#CED8F6' contenteditable='true'>83</td><td bgcolor='#CED8F6' contenteditable='true'>83</td><td bgcolor='#CED8F6' contenteditable='true'>83</td><td bgcolor='#CED8F6' contenteditable='true'>83</td></tr> 
+      <tr > <td align='left'>TotalExpenses</td> <td bgcolor='#CED8F6' contenteditable='true'>640</td><td bgcolor='#CED8F6' contenteditable='true'>650</td><td bgcolor='#CED8F6' contenteditable='true'>660</td><td bgcolor='#CED8F6' contenteditable='true'>670</td><td bgcolor='#CED8F6' contenteditable='true'>680</td><td bgcolor='#CED8F6' contenteditable='true'>690</td></tr> 
+      <tr > <td align='left'>SalesAndMarketing</td> <td bgcolor='#CED8F6' contenteditable='true'>350</td><td bgcolor='#CED8F6' contenteditable='true'>360</td><td bgcolor='#CED8F6' contenteditable='true'>370</td><td bgcolor='#CED8F6' contenteditable='true'>380</td><td bgcolor='#CED8F6' contenteditable='true'>390</td><td bgcolor='#CED8F6' contenteditable='true'>400</td></tr> 
+      <tr > <td align='left'>RnD</td> <td bgcolor='#CED8F6' contenteditable='true'>180</td><td bgcolor='#CED8F6' contenteditable='true'>180</td><td bgcolor='#CED8F6' contenteditable='true'>180</td><td bgcolor='#CED8F6' contenteditable='true'>180</td><td bgcolor='#CED8F6' contenteditable='true'>180</td><td bgcolor='#CED8F6' contenteditable='true'>180</td></tr> 
+      <tr > <td align='left'>GeneralAndAdmin</td> <td bgcolor='#CED8F6' contenteditable='true'>110</td><td bgcolor='#CED8F6' contenteditable='true'>110</td><td bgcolor='#CED8F6' contenteditable='true'>110</td><td bgcolor='#CED8F6' contenteditable='true'>110</td><td bgcolor='#CED8F6' contenteditable='true'>110</td><td bgcolor='#CED8F6' contenteditable='true'>110</td></tr> 
+      <tr > <td align='left'>EBITDA</td> <td bgcolor='#CED8F6' contenteditable='true'>3499</td><td bgcolor='#CED8F6' contenteditable='true'>3631</td><td bgcolor='#CED8F6' contenteditable='true'>3796</td><td bgcolor='#CED8F6' contenteditable='true'>3970</td><td bgcolor='#CED8F6' contenteditable='true'>4210</td><td bgcolor='#CED8F6' contenteditable='true'>4435</td></tr> 
+      <tr > <td align='left'>BillingBasedPnL</td> <td bgcolor='#CED8F6' contenteditable='true'>-221</td><td bgcolor='#CED8F6' contenteditable='true'>-223</td><td bgcolor='#CED8F6' contenteditable='true'>-228</td><td bgcolor='#CED8F6' contenteditable='true'>-263</td><td bgcolor='#CED8F6' contenteditable='true'>-232</td><td bgcolor='#CED8F6' contenteditable='true'>-225</td></tr> 
+      <tr > <td align='left'>RawLeadsEnquiries</td> <td bgcolor='#CED8F6' contenteditable='true'>3611</td><td bgcolor='#CED8F6' contenteditable='true'>3429</td><td bgcolor='#CED8F6' contenteditable='true'>5200</td><td bgcolor='#CED8F6' contenteditable='true'>5357</td><td bgcolor='#CED8F6' contenteditable='true'>4684</td><td bgcolor='#CED8F6' contenteditable='true'>4400</td></tr> 
+      <tr > <td align='left'>ConversionRawLeadsToMQLs</td> <td bgcolor='#CED8F6' contenteditable='true'>1.8</td><td bgcolor='#CED8F6' contenteditable='true'>2.1</td><td bgcolor='#CED8F6' contenteditable='true'>1.5</td><td bgcolor='#CED8F6' contenteditable='true'>1.4</td><td bgcolor='#CED8F6' contenteditable='true'>1.9</td><td bgcolor='#CED8F6' contenteditable='true'>2</td></tr> 
+      <tr > <td align='left'>Opportunities</td> <td bgcolor='#CED8F6' contenteditable='true'>65</td><td bgcolor='#CED8F6' contenteditable='true'>72</td><td bgcolor='#CED8F6' contenteditable='true'>78</td><td bgcolor='#CED8F6' contenteditable='true'>75</td><td bgcolor='#CED8F6' contenteditable='true'>89</td><td bgcolor='#CED8F6' contenteditable='true'>88</td></tr> 
+      <tr > <td align='left'>ConversionOppToWin</td> <td bgcolor='#CED8F6' contenteditable='true'>62</td><td bgcolor='#CED8F6' contenteditable='true'>58</td><td bgcolor='#CED8F6' contenteditable='true'>55</td><td bgcolor='#CED8F6' contenteditable='true'>61</td><td bgcolor='#CED8F6' contenteditable='true'>54</td><td bgcolor='#CED8F6' contenteditable='true'>59</td></tr> 
+      <tr > <td align='left'>WinToLossRatio</td> <td bgcolor='#CED8F6' contenteditable='true'>75</td><td bgcolor='#CED8F6' contenteditable='true'>82</td><td bgcolor='#CED8F6' contenteditable='true'>65</td><td bgcolor='#CED8F6' contenteditable='true'>79</td><td bgcolor='#CED8F6' contenteditable='true'>85</td><td bgcolor='#CED8F6' contenteditable='true'>78</td></tr> 
+      <tr > <td align='left'>NumFTESalesRep</td> <td bgcolor='#CED8F6' contenteditable='true'>6</td><td bgcolor='#CED8F6' contenteditable='true'>6.5</td><td bgcolor='#CED8F6' contenteditable='true'>7</td><td bgcolor='#CED8F6' contenteditable='true'>7.5</td><td bgcolor='#CED8F6' contenteditable='true'>8</td><td bgcolor='#CED8F6' contenteditable='true'>8.5</td></tr> 
+      <tr > <td align='left'>QuotaPerRep</td> <td bgcolor='#CED8F6' contenteditable='true'>4.2</td><td bgcolor='#CED8F6' contenteditable='true'>4.2</td><td bgcolor='#CED8F6' contenteditable='true'>4.2</td><td bgcolor='#CED8F6' contenteditable='true'>4.2</td><td bgcolor='#CED8F6' contenteditable='true'>4.2</td><td bgcolor='#CED8F6' contenteditable='true'>4.2</td></tr> 
+      <tr > <td align='left'>SalesCapacity</td> <td bgcolor='#CED8F6' contenteditable='true'>25.2</td><td bgcolor='#CED8F6' contenteditable='true'>27.3</td><td bgcolor='#CED8F6' contenteditable='true'>29.4</td><td bgcolor='#CED8F6' contenteditable='true'>31.5</td><td bgcolor='#CED8F6' contenteditable='true'>33.6</td><td bgcolor='#CED8F6' contenteditable='true'>35.7</td></tr> 
+      <tr > <td align='left'>CoverageRatio</td> <td bgcolor='#CED8F6' contenteditable='true'>1.2</td><td bgcolor='#CED8F6' contenteditable='true'>1.2</td><td bgcolor='#CED8F6' contenteditable='true'>1.2</td><td bgcolor='#CED8F6' contenteditable='true'>1.2</td><td bgcolor='#CED8F6' contenteditable='true'>1.2</td><td bgcolor='#CED8F6' contenteditable='true'>1.2</td></tr> 
+      <tr > <td align='left'>ProductivityPerfTE</td> <td bgcolor='#CED8F6' contenteditable='true'>44</td><td bgcolor='#CED8F6' contenteditable='true'>42.5</td><td bgcolor='#CED8F6' contenteditable='true'>42</td><td bgcolor='#CED8F6' contenteditable='true'>41.6</td><td bgcolor='#CED8F6' contenteditable='true'>40.5</td><td bgcolor='#CED8F6' contenteditable='true'>40.9</td></tr> 
+   </table> 
+<!-- footer --> 
+	<hr/> 
+	<table> 
+		<th width='100%' align='center'> 
+			&copy; Copyright 2015 by 9250891 CANADA INC.. All rights reserved. This material may not be duplicated without written permission. 
+		</th> 
+	</table> 
+</body>

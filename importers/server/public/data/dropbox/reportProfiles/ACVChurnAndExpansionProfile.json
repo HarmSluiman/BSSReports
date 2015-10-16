@@ -1,0 +1,23 @@
+{"name":           "ACVChurnAndExpansion",
+	"description": "Churn and Expansion as Percent of ACV",
+	"errorMessage":"An error occured while producing the chart.",
+	"reportID":    "ACVChurnAndExpansion",
+	"title":       "Churn and Expansion",
+	"dataFilePath":    "",
+	"htmlFilePath":    "bookingMetrics/",
+	"keys":        ["PercentCustomerChurn", "PercentACVChurn", "PercentACVExpansion"],
+	"labels":      ["'% Customer Churn'", "'% ACV Churn'", "'% ACV Expansion'"],
+	"yLabel":      "Percent",
+	"periodLabels":
+	["seed",
+	 "2015-01-01",
+	 "2015-02-01",	 
+	 "2015-03-01",	 
+	 "2015-04-01",	 
+	 "2015-05-01",	 
+	 "2015-06-01",	 
+	 "2015-07-01",	 
+	 "2015-08-01"
+	]    
+}  
+

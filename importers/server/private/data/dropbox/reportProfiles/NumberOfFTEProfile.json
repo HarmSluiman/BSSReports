@@ -1,0 +1,23 @@
+{"name":           "NumFTESalesRep",
+	"description": "Number of full time equivalent sales reps",
+	"errorMessage":"An error occured while producing the chart.",
+	"reportID":    "NumFTESalesRep",
+	"title":       " Number of FTE Sales Reps ",
+	"dataFilePath":    "",
+	"htmlFilePath":    "funnelMetrics/",
+	"keys":        ["NumFTESalesRep"],
+	"labels":      ["' '"],
+	"yLabel":      " ",
+	"periodLabels":
+	["seed", 
+	 "2015-01-01",
+	 "2015-02-01",	 
+	 "2015-03-01",	  
+	 "2015-04-01",	 
+	 "2015-05-01",	 
+	 "2015-06-01",	 
+	 "2015-07-01",	 
+	 "2015-08-01"
+	]    
+}  
+

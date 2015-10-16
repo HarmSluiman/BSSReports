@@ -1,0 +1,22 @@
+{"name":           "LTVandCAC",
+	"description": "LTV and CAC",
+	"errorMessage":"An error occured while producing the chart.",
+	"reportID":    "LTVandCAC",
+	"title":       "LTV and CAC",
+	"dataFilePath":    "",
+	"htmlFilePath":    "unitEconomics/",  
+	"keys":        ["LTV", "CAC"],
+	"labels":      ["'LTV'", "'CAC'"],
+	"yLabel":      "$ 000s",
+	"periodLabels":
+	["seed",  
+	 "2015-01-01",
+	 "2015-02-01",	 
+	 "2015-03-01",	 
+	 "2015-04-01",	 
+	 "2015-05-01",	 
+	 "2015-06-01",	 
+	 "2015-07-01",	 
+	 "2015-08-01"
+	]    
+}  
