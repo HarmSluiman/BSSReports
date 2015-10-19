@@ -26,7 +26,7 @@ exports.generateHtmlFromJSON = function (inputJSON){
 		"<meta name='copyright' content='© Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />\n" +
 		"			\n"+
 		"			\n"+
-		"<script src='/js/postTable.js'>						\n"+
+		"<script src='/public/js/postTable.js'>						\n"+
 		"														\n"+
 		"</script>												\n"+
 		"<script>												\n"+
@@ -81,7 +81,7 @@ exports.generateHtmlFromJSON = function (inputJSON){
 		"         }																									\n"+
 		"      }																									\n"+
 	    "	   setMessageArea(messageString);  																		\n"+
-		"	   // post the vlid data and trigger a refresh of the data files and profiled reports.  				\n"+
+		"	   // post the valid data and trigger a refresh of the data files and profiled reports.  				\n"+
 		"      // if there was no bad data 																			\n"+
 		"      if (messageString === '') { 																			\n"+
 		"      // postTable('http://localhost:10000/fullAnnualContract/', JSON.stringify(outputJSON, null, 3));  	\n"+

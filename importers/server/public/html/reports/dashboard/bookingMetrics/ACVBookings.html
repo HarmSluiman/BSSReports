@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta name='copyright' content='� Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />
-<link href='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>
-<script src='/lib/jquery/jquery-1.11.3.min.js'></script>
-<script src='/lib/d3/d3.min.js' charset='utf-8'></script>
-<script src='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>
+<link href='/public/lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>
+<script src='/public/lib/jquery/jquery-1.11.3.min.js'></script>
+<script src='/public/lib/d3/d3.min.js' charset='utf-8'></script>
+<script src='/public/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>
 <script>						
 function setMessageArea(input) 
 {								
@@ -26,7 +26,7 @@ function showHide(elementID)
 	else {						
 		showingPage = true;		
     document.getElementById(elementID).innerHTML =  
-	"	<input type='button' value='Redraw the graph with your changes' onClick='updateFromTable(ACVChurnAndExpansionTableData)'/> 	"+	   "  <p>Making changes to this data is temporary and will not impact any other chart. To reset the values to the original state	"+	   "  simply hide and reshow the data, and then redraw the graph.</p>																"+	   "  <p>In order to make changes that affect all the graphs you can either resubmit the base data or edit the resolved			"+	   "  full data set. To do this choose the Full Data Set Used link on the main page, or select <a href='/html/reports/dashboard/dataTables/fullAnnualContractData.html'>this link</a>.</p> "+ 	"	<div id='messageArea'></div>	"+	
+	"	<input type='button' value='Redraw the graph with your changes' onClick='updateFromTable(ACVChurnAndExpansionTableData)'/> 	"+	   "  <p>Making changes to this data is temporary and will not impact any other chart. To reset the values to the original state	"+	   "  simply hide and reshow the data, and then redraw the graph.</p>																"+	   "  <p>In order to make changes that affect all the graphs you can either resubmit the base data or edit the resolved			"+	   "  full data set. To do this choose the Full Data Set Used link on the main page, or select <a href='/public/html/reports/dashboard/dataTables/fullAnnualContractData.html'>this link</a>.</p> "+ 	"	<div id='messageArea'></div>	"+	
 	"	<iframe src='./ACVBookingsData.html' height='250' width='100%' />	" ;
 	}    						
 								
@@ -108,7 +108,7 @@ ACVChurnAndExpansionTableData = data;
 <!-- graph script -->
 	 <script>
 		var ACVChurnAndExpansionTableData; 							
-        d3.json('/data/viewdata/ACVBookings.json', function(data) {	
+        d3.json('/public/data/viewdata/ACVBookings.json', function(data) {	
             for (var i = 0; i < data.length; i++) { 				
                 data[i] = MG.convert.date(data[i], 'period');		
                 }													
@@ -120,7 +120,7 @@ ACVChurnAndExpansionTableData = data;
 <b>Description</b> 
 <div id='detailedDescription'></div> 
 <script> 
-document.getElementById('detailedDescription').innerHTML = " <iframe name='Detailed Description' src='/html/descriptions/ACVBookingsDescriptions.html' width='100%' />" ;
+document.getElementById('detailedDescription').innerHTML = " <iframe name='Detailed Description' src='/public/html/descriptions/ACVBookingsDescriptions.html' width='100%' />" ;
 </script> 
 <!-- footer -->							
 <hr/>										

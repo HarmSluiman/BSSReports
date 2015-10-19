@@ -1,27 +1,27 @@
 [
    [
       {
-         "value": 40,
+         "value": "40",
          "period": "2015-01-01"
       },
       {
-         "value": 42,
+         "value": "42",
          "period": "2015-02-01"
       },
       {
-         "value": 43,
+         "value": "43",
          "period": "2015-03-01"
       },
       {
-         "value": 46,
+         "value": "46",
          "period": "2015-04-01"
       },
       {
-         "value": 48,
+         "value": "48",
          "period": "2015-05-01"
       },
       {
-         "value": 52,
+         "value": "52",
          "period": "2015-06-01"
       }
    ]

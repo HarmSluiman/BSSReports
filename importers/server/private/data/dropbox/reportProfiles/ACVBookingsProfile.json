@@ -5,7 +5,7 @@
 	"title":       "ACV Bookings",
 	"dataFilePath":    "",
 	"htmlFilePath":    "bookingMetrics/",
-	"detailedDescription": "/html/descriptions/ACVBookingsDescriptions.html",  
+	"detailedDescription": "/public/html/descriptions/ACVBookingsDescriptions.html",  
 	"keys":        ["NewACV", "NetNewACV", "ExpansionACV", "ChurnACV"],
 	"labels":      ["'New ACV'", "'Net New ACV'", "'Expansion ACV'", "'Churned ACV'"],
 	"yLabel":      "$ 000s",

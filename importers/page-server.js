@@ -7,12 +7,12 @@ var express = require('express');
 
 
 var server = express();
-server.use(express.static(__dirname + '/server/public'));
+server.use(express.static(__dirname + '/server'));
 
 var port = 10080;
 server.listen(port, function() { 
     console.log('My node server for web pages is listening on port ' + port);
-    console.log('the root path is ' + __dirname + '/server/public');  
+    console.log('the root path is ' + __dirname + '/server');  
 });
 
 

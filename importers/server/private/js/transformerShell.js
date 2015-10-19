@@ -19,7 +19,7 @@ function copySetByName (input, output, name, profileJSON){
 	for (i = 0; i < input.items.length ; i++){
 		if (input.items[i].name === name){		
 //			copy the period/value pairs to output array
-//			skipping the first entry and use teh profileLabels versus period number			
+//			skipping the first entry and use the profileLabels versus period number			
 			for (j = 1; j < input.items[i].values.length ; j++){
 				k = input.items[i].values[j].period;
 				initSetElement(
@@ -52,10 +52,10 @@ function produceReportPage( outputPath, profileJSON){
 		"<html>\n" +
 		"<head>\n" +
 		"<meta name='copyright' content='© Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.' />\n" +
-		"<link href='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>\n" +
-		"<script src='/lib/jquery/jquery-1.11.3.min.js'></script>\n" +
-		"<script src='/lib/d3/d3.min.js' charset='utf-8'></script>\n" +
-		"<script src='/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>\n" +
+		"<link href='/public/lib/metrics-graphics-2.4.0/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>\n" +
+		"<script src='/public/lib/jquery/jquery-1.11.3.min.js'></script>\n" +
+		"<script src='/public/lib/d3/d3.min.js' charset='utf-8'></script>\n" +
+		"<script src='/public/lib/metrics-graphics-2.4.0/dist/metricsgraphics.min.js'></script>\n" +
 		"<script>						\n"+
 		"function setMessageArea(input) \n"+
 		"{								\n"+
@@ -80,7 +80,7 @@ function produceReportPage( outputPath, profileJSON){
 		"   \"  <p>Making changes to this data is temporary and will not impact any other chart. To reset the values to the original state	\"+	"+
 		"   \"  simply hide and reshow the data, and then redraw the graph.</p>																\"+	"+
 		"   \"  <p>In order to make changes that affect all the graphs you can either resubmit the base data or edit the resolved			\"+	"+
-		"   \"  full data set. To do this choose the Full Data Set Used link on the main page, or select <a href='/html/reports/dashboard/dataTables/fullAnnualContractData.html'>this link</a>.</p> \"+ "+
+		"   \"  full data set. To do this choose the Full Data Set Used link on the main page, or select <a href='/public/html/reports/dashboard/dataTables/fullAnnualContractData.html'>this link</a>.</p> \"+ "+
 		"	\"	<div id='messageArea'></div>	\"+	\n"+
 		"	\"	<iframe src='./"+ reportID +"Data.html' height='250' width='100%' />	\" ;\n"+
 		"	}    						\n"+
@@ -165,7 +165,7 @@ function produceReportPage( outputPath, profileJSON){
 	"<!-- graph script -->\n"+
 	"	 <script>\n"+
 	"		var ACVChurnAndExpansionTableData; 							\n" +		
-	"        d3.json('/data/viewdata/"+ dataFile +"', function(data) {	\n"+
+	"        d3.json('/public/data/viewdata/"+ dataFile +"', function(data) {	\n"+
 	"            for (var i = 0; i < data.length; i++) { 				\n"+
     "                data[i] = MG.convert.date(data[i], 'period');		\n"+
     "                }													\n"+
