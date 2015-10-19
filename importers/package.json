@@ -14,7 +14,7 @@
   ],
   "author": "Harm Sluiman, 9250891 CANADA INC.",
   "license": "Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
 	  "dependencies": {
 		    "express": "^4.4.3"
 	  }
