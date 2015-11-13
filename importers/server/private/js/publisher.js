@@ -8,10 +8,10 @@ function cloner (input, filename) {
 	var fs = require('fs');
 	if (input) {
 		// write contents to viewer data source directory
-//		console.log('writing data file ' + filename);
+//		console.log('-publisher- writing data file ' + filename);
 		fs.writeFile(filename, input, function (err) {
 			if (err) { throw err; } 
-//			console.log('saved');
+//			console.log('-publisher- saved');
 		});
 	}
 }
@@ -26,10 +26,10 @@ exports.watcher = function () {
 
 	
 	fs.watch('./server/private/data/viewdata/', function(event, filename){
-		console.log( filename + " will be published");		
-		console.log('event is: ' + event);
+		console.log( "-publisher- " + filename + " will be published");		
+		console.log('-publisher- event is: ' + event);
 		  if (filename) {
-		    console.log('filename provided: ' + filename);
+		    console.log('-publisher- filename provided: ' + filename);
 			  // read the modified file and push to cloner
 			var data;
 			fs.readFile('./server/private/data/viewdata/' + filename, function (err, data) {
@@ -40,16 +40,16 @@ exports.watcher = function () {
 				}
 			});
 		  } else {
-		    console.log('filename not provided');
+		    console.log('-publisher- filename not provided');
 		  }
 	});
-	console.log("Now watching /server/private/data/viewdata/ for changes...");
+	console.log("-publisher- Now watching ./server/private/data/viewdata/ for changes...");
 
 	fs.watch('./server/private/html/dataTables/', function(event, filename){
-		console.log( filename + " will be published");		
-		console.log('event is: ' + event);
+		console.log("-publisher- " + filename + " will be published");		
+		console.log('-publisher- event is: ' + event);
 		  if (filename) {
-		    console.log('filename provided: ' + filename);
+		    console.log('-publisher- filename provided: ' + filename);
 			  // read the modified file and push to cloner
 			var data;
 			fs.readFile('./server/private/html/dataTables/' + filename, function (err, data) {
@@ -60,17 +60,17 @@ exports.watcher = function () {
 				}
 			});
 		  } else {
-		    console.log('filename not provided');
+		    console.log('-publisher- filename not provided');
 		  }
 	});
-	console.log("Now watching server/private/html/dataTables/ for changes...");
+	console.log("-publisher- Now watching ./server/private/html/dataTables/ for changes...");
 
 	
 	fs.watch('./server/private/data/viewdata/viewProfiles/', function(event, filename){
-		console.log( filename + " will be processed");		
-		console.log('event is: ' + event);
+		console.log("-publisher- " + filename + " will be processed");		
+		console.log('-publisher- event is: ' + event);
 		  if (filename) {
-		    console.log('filename provided: ' + filename);
+		    console.log('-publisher- filename provided: ' + filename);
 			  // read the modified file and push to cloner
 			var dataset;
 			fs.readFile('./server/private/data/viewdata/fullset/fullAnnualContractInput.json', function (err, dataset) {
@@ -81,10 +81,10 @@ exports.watcher = function () {
 				}
 			});
 		  } else {
-		    console.log('filename not provided');
+		    console.log('-publisher- filename not provided');
 		  }
 	});
-	console.log("Now watching server/private/data/viewdata/viewProfile/ for changes...");
+	console.log("-publisher- Now watching ./server/private/data/viewdata/viewProfiles/ for changes...");
 	
 
 };

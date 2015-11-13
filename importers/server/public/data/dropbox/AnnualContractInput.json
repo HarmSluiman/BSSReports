@@ -1,5 +1,5 @@
 { "label": "AnnualContractInput",   
-  "items": [              
+  "items": [                  
           { "name":"Bookings", 
               "values":[
              {"value": "", "month":"DEC"},          
@@ -51,24 +51,24 @@
           { "name":"EndingARR",
               "values":[
               {"value":4800, "month":"DEC"},
-       		  {"value":null, "month":"JAN"},
-         	  {"value":null, "month":"FEB"},
-        	  {"value":null, "month":"MAR"},
-        	  {"value":null, "month":"APR"},
-        	  {"value":null, "month":"MAY"},
-        	  {"value":null, "month":"JUN"}
+       		  {"value":4987, "month":"JAN"},
+         	  {"value":5158, "month":"FEB"},
+        	  {"value":5370, "month":"MAR"},
+        	  {"value":5591, "month":"APR"},
+        	  {"value":5892, "month":"MAY"},
+        	  {"value":6175, "month":"JUN"}
         	  ] 
           },
        	  
           { "name":"TotalNumCustomers",
               "values":[
               {"value":792, "month":"DEC"},
-       		  {"value":null, "month":"JAN"},
-         	  {"value":null, "month":"FEB"},
-        	  {"value":null, "month":"MAR"},
-        	  {"value":null, "month":"APR"},
-        	  {"value":null, "month":"MAY"},
-        	  {"value":null, "month":"JUN"}
+       		  {"value":808, "month":"JAN"},
+         	  {"value":825, "month":"FEB"},
+        	  {"value":845, "month":"MAR"},
+        	  {"value":866, "month":"APR"},
+        	  {"value":890, "month":"MAY"},
+        	  {"value":916, "month":"JUN"}
         	  ] 
           },
 

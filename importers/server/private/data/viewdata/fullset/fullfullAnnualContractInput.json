@@ -1,1 +1,1556 @@
-"{\n   \"label\": \"AnnualContractInput\",\n   \"items\": [\n      {\n         \"name\": \"Bookings\",\n         \"values\": [\n            {\n               \"value\": \"400\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"300\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"400\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"300\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"400\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"500\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"AverageACV\",\n         \"values\": [\n            {\n               \"value\": \"6600\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"6571\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"6837\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"6783\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"6750\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"6692\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"AverageContractTerm\",\n         \"values\": [\n            {\n               \"value\": \"1.3\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"1.4\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"1.4\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"1.5\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"1.4\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"1.6\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"AverageMonthUpfront\",\n         \"values\": [\n            {\n               \"value\": \"5.5\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"7\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"5\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"6.5\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"5.8\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"6.2\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"ARPAAverageMRR\",\n         \"values\": [\n            {\n               \"value\": \"550\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"547.6\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"569.8\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"565.3\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"562.5\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"557.7\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"ARPAAcrossInstall\",\n         \"values\": [\n            {\n               \"value\": \"514.4\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"521\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"529.5\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"537.9\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"551.7\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"561.8\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"NewACV\",\n         \"values\": [\n            {\n               \"value\": \"264\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"276\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"294\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"312\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"324\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"348\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"ChurnACV\",\n         \"values\": [\n            {\n               \"value\": \"-100.8\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"-134.6\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"-108.3\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"-107.4\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"-106.2\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"-106.1\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"ExpansionACV\",\n         \"values\": [\n            {\n               \"value\": \"24\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"29.9\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"25.8\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"16.1\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"83.9\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"41.2\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"NetNewACV\",\n         \"values\": [\n            {\n               \"value\": \"187.2\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"171.3\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"211.5\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"220.7\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"301.6\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"283.2\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"StartingArr\",\n         \"values\": [\n            {\n               \"value\": \"4800\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"4987\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"5158\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"5369\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"5590\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"5892\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"EndingArr\",\n         \"values\": [\n            {\n               \"value\": \"4987\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"5158\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"5369\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"5590\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"5892\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"6175\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"TotalNumCustomers\",\n         \"values\": [\n            {\n               \"value\": \"808\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"825\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"845\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"866\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"890\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"916\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"NumNewCustomers\",\n         \"values\": [\n            {\n               \"value\": \"40\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"42\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"43\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"46\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"48\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"52\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"NumChurnCustomers\",\n         \"values\": [\n            {\n               \"value\": \"-24\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"-25\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"-23\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"-25\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"-24\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"-26\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"NetNewCustomers\",\n         \"values\": [\n            {\n               \"value\": \"16\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"17\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"20\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"21\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"24\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"26\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"PercentCustomerChurn\",\n         \"values\": [\n            {\n               \"value\": \"3.03\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"3.09\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"2.79\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"2.96\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"2.77\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"2.92\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"PercentACVChurn\",\n         \"values\": [\n            {\n               \"value\": \"2.1\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"2.7\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"2.1\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"2\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"1.9\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"1.8\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"PercentACVExpansion\",\n         \"values\": [\n            {\n               \"value\": \"0.5\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"0.6\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"0.5\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"0.3\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"1.5\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"0.7\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"PercentNetACVChurn\",\n         \"values\": [\n            {\n               \"value\": \"1.6\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"2.1\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"1.6\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"1.7\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"0.4\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"1.1\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"CustomerEngagementScore\",\n         \"values\": [\n            {\n               \"value\": \"121\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"120\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"125\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"126\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"130\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"135\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"NetPromoterScore\",\n         \"values\": [\n            {\n               \"value\": \"28\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"27\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"29\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"32\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"33\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"35\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"LTV\",\n         \"values\": [\n            {\n               \"value\": \"21738\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"16834\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"22521\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"23460\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"24572\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"25716\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"CAC\",\n         \"values\": [\n            {\n               \"value\": \"8750\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"8571\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"8605\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"8261\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"8125\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"7692\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"LTVToCACRatio\",\n         \"values\": [\n            {\n               \"value\": \"2.5\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"2\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"2.6\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"2.8\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"3\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"3.3\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"MonthsToRecoverCAC\",\n         \"values\": [\n            {\n               \"value\": \"19\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"19\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"18\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"18\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"17\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"17\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"Invoiced\",\n         \"values\": [\n            {\n               \"value\": \"505\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"515\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"520\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"490\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"540\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"560\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"Revenue\",\n         \"values\": [\n            {\n               \"value\": \"4987\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"5158\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"5369\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"5590\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"5892\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"6175\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"COGS\",\n         \"values\": [\n            {\n               \"value\": \"848\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"877\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"913\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"950\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"1002\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"1050\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"GrossMargin\",\n         \"values\": [\n            {\n               \"value\": \"4139\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"4281\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"4456\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"4640\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"4890\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"5125\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"GrossMarginPercent\",\n         \"values\": [\n            {\n               \"value\": \"83\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"83\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"83\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"83\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"83\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"83\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"TotalExpenses\",\n         \"values\": [\n            {\n               \"value\": \"640\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"650\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"660\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"670\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"680\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"690\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"SalesAndMarketing\",\n         \"values\": [\n            {\n               \"value\": \"350\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"360\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"370\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"380\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"390\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"400\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"RnD\",\n         \"values\": [\n            {\n               \"value\": \"180\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"180\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"180\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"180\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"180\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"180\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"GeneralAndAdmin\",\n         \"values\": [\n            {\n               \"value\": \"110\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"110\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"110\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"110\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"110\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"110\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"EBITDA\",\n         \"values\": [\n            {\n               \"value\": \"3499\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"3631\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"3796\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"3970\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"4210\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"4435\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"BillingBasedPnL\",\n         \"values\": [\n            {\n               \"value\": \"-221\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"-223\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"-228\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"-263\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"-232\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"-225\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"RawLeadsEnquiries\",\n         \"values\": [\n            {\n               \"value\": \"3611\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"3429\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"5200\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"5357\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"4684\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"4400\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"ConversionRawLeadsToMQLs\",\n         \"values\": [\n            {\n               \"value\": \"1.8\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"2.1\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"1.5\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"1.4\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"1.9\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"2\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"Opportunities\",\n         \"values\": [\n            {\n               \"value\": \"65\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"72\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"78\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"75\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"89\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"88\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"ConversionOppToWin\",\n         \"values\": [\n            {\n               \"value\": \"62\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"58\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"55\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"61\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"54\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"59\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"WinToLossRatio\",\n         \"values\": [\n            {\n               \"value\": \"75\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"82\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"65\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"79\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"85\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"78\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"NumFTESalesRep\",\n         \"values\": [\n            {\n               \"value\": \"6\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"6.5\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"7\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"7.5\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"8\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"8.5\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"QuotaPerRep\",\n         \"values\": [\n            {\n               \"value\": \"4.2\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"4.2\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"4.2\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"4.2\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"4.2\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"4.2\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"SalesCapacity\",\n         \"values\": [\n            {\n               \"value\": \"25.2\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"27.3\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"29.4\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"31.5\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"33.6\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"35.7\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"CoverageRatio\",\n         \"values\": [\n            {\n               \"value\": \"1.2\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"1.2\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"1.2\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"1.2\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"1.2\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"1.2\",\n               \"period\": \"6\"\n            }\n         ]\n      },\n      {\n         \"name\": \"ProductivityPerfTE\",\n         \"values\": [\n            {\n               \"value\": \"44\",\n               \"period\": \"1\"\n            },\n            {\n               \"value\": \"42.5\",\n               \"period\": \"2\"\n            },\n            {\n               \"value\": \"42\",\n               \"period\": \"3\"\n            },\n            {\n               \"value\": \"41.6\",\n               \"period\": \"4\"\n            },\n            {\n               \"value\": \"40.5\",\n               \"period\": \"5\"\n            },\n            {\n               \"value\": \"40.9\",\n               \"period\": \"6\"\n            }\n         ]\n      }\n   ]\n}"
+{
+   "label": "AnnualContractInput",
+   "items": [
+      {
+         "name": "Bookings",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "264",
+               "period": 1
+            },
+            {
+               "value": "276",
+               "period": 2
+            },
+            {
+               "value": "294",
+               "period": 3
+            },
+            {
+               "value": "312",
+               "period": 4
+            },
+            {
+               "value": "324",
+               "period": 5
+            },
+            {
+               "value": "348",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "AverageACV",
+         "values": [
+            {
+               "value": null,
+               "period": 0
+            },
+            {
+               "value": 6600,
+               "period": 1
+            },
+            {
+               "value": 6571,
+               "period": 2
+            },
+            {
+               "value": 2940,
+               "period": 3
+            },
+            {
+               "value": 6783,
+               "period": 4
+            },
+            {
+               "value": 6750,
+               "period": 5
+            },
+            {
+               "value": 6692,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "AverageContractTerm",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "1.3",
+               "period": 1
+            },
+            {
+               "value": "1.4",
+               "period": 2
+            },
+            {
+               "value": "1.4",
+               "period": 3
+            },
+            {
+               "value": "1.5",
+               "period": 4
+            },
+            {
+               "value": "1.4",
+               "period": 5
+            },
+            {
+               "value": "1.6",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "AverageMonthUpfront",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "5.5",
+               "period": 1
+            },
+            {
+               "value": "7",
+               "period": 2
+            },
+            {
+               "value": "5",
+               "period": 3
+            },
+            {
+               "value": "6.5",
+               "period": 4
+            },
+            {
+               "value": "5.8",
+               "period": 5
+            },
+            {
+               "value": "6.2",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ARPAAverageMRR",
+         "values": [
+            {
+               "value": null,
+               "period": 0
+            },
+            {
+               "value": 550,
+               "period": 1
+            },
+            {
+               "value": 547.6,
+               "period": 2
+            },
+            {
+               "value": 245,
+               "period": 3
+            },
+            {
+               "value": 565.3,
+               "period": 4
+            },
+            {
+               "value": 562.5,
+               "period": 5
+            },
+            {
+               "value": 557.7,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ARPAAcrossInstall",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": null,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NewACV",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "264",
+               "period": 1
+            },
+            {
+               "value": "276",
+               "period": 2
+            },
+            {
+               "value": "294",
+               "period": 3
+            },
+            {
+               "value": "312",
+               "period": 4
+            },
+            {
+               "value": "324",
+               "period": 5
+            },
+            {
+               "value": "348",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ChurnACV",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 0,
+               "period": 1
+            },
+            {
+               "value": -712.8,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ExpansionACV",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 0,
+               "period": 1
+            },
+            {
+               "value": 158.4,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NetNewACV",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 26400,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "StartingArr",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 0,
+               "period": 1
+            },
+            {
+               "value": 26400,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "EndingArr",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 26400,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "TotalNumCustomers",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": null,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NumNewCustomers",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": 40,
+               "period": 1
+            },
+            {
+               "value": 42,
+               "period": 2
+            },
+            {
+               "value": 100,
+               "period": 3
+            },
+            {
+               "value": 46,
+               "period": 4
+            },
+            {
+               "value": 48,
+               "period": 5
+            },
+            {
+               "value": 52,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NumChurnCustomers",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": -24,
+               "period": 1
+            },
+            {
+               "value": -25,
+               "period": 2
+            },
+            {
+               "value": -23,
+               "period": 3
+            },
+            {
+               "value": -25,
+               "period": 4
+            },
+            {
+               "value": -24,
+               "period": 5
+            },
+            {
+               "value": -26,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NetNewCustomers",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": null,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "PercentCustomerChurn",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": null,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "PercentACVChurn",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "2.1",
+               "period": 1
+            },
+            {
+               "value": "2.7",
+               "period": 2
+            },
+            {
+               "value": "2.1",
+               "period": 3
+            },
+            {
+               "value": "2",
+               "period": 4
+            },
+            {
+               "value": "1.9",
+               "period": 5
+            },
+            {
+               "value": "1.8",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "PercentACVExpansion",
+         "values": [
+            {
+               "value": "",
+               "period": 0
+            },
+            {
+               "value": "0.5",
+               "period": 1
+            },
+            {
+               "value": "0.6",
+               "period": 2
+            },
+            {
+               "value": "0.5",
+               "period": 3
+            },
+            {
+               "value": "0.3",
+               "period": 4
+            },
+            {
+               "value": "1.5",
+               "period": 5
+            },
+            {
+               "value": "0.7",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "PercentNetACVChurn",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": null,
+               "period": 1
+            },
+            {
+               "value": 2.1,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "CustomerEngagementScore",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "121",
+               "period": 1
+            },
+            {
+               "value": "120",
+               "period": 2
+            },
+            {
+               "value": "125",
+               "period": 3
+            },
+            {
+               "value": "126",
+               "period": 4
+            },
+            {
+               "value": "130",
+               "period": 5
+            },
+            {
+               "value": "135",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NetPromoterScore",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "28",
+               "period": 1
+            },
+            {
+               "value": "27",
+               "period": 2
+            },
+            {
+               "value": "29",
+               "period": 3
+            },
+            {
+               "value": "32",
+               "period": 4
+            },
+            {
+               "value": "33",
+               "period": 5
+            },
+            {
+               "value": "35",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "LTV",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 21738,
+               "period": 1
+            },
+            {
+               "value": 16834,
+               "period": 2
+            },
+            {
+               "value": 9683,
+               "period": 3
+            },
+            {
+               "value": 23460,
+               "period": 4
+            },
+            {
+               "value": 24572,
+               "period": 5
+            },
+            {
+               "value": 25716,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "CAC",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 8750,
+               "period": 1
+            },
+            {
+               "value": 8571,
+               "period": 2
+            },
+            {
+               "value": 3700,
+               "period": 3
+            },
+            {
+               "value": 8261,
+               "period": 4
+            },
+            {
+               "value": 8125,
+               "period": 5
+            },
+            {
+               "value": 7692,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "LTVToCACRatio",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 2.5,
+               "period": 1
+            },
+            {
+               "value": 2,
+               "period": 2
+            },
+            {
+               "value": 2.6,
+               "period": 3
+            },
+            {
+               "value": 2.8,
+               "period": 4
+            },
+            {
+               "value": 3,
+               "period": 5
+            },
+            {
+               "value": 3.3,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "MonthsToRecoverCAC",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 19,
+               "period": 1
+            },
+            {
+               "value": 19,
+               "period": 2
+            },
+            {
+               "value": 18,
+               "period": 3
+            },
+            {
+               "value": 18,
+               "period": 4
+            },
+            {
+               "value": 17,
+               "period": 5
+            },
+            {
+               "value": 17,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "Invoiced",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "505",
+               "period": 1
+            },
+            {
+               "value": "515",
+               "period": 2
+            },
+            {
+               "value": "520",
+               "period": 3
+            },
+            {
+               "value": "490",
+               "period": 4
+            },
+            {
+               "value": "540",
+               "period": 5
+            },
+            {
+               "value": "560",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "Revenue",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 26400,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "COGS",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 4488,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "GrossMargin",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 21912,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "GrossMarginPercent",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "83",
+               "period": 1
+            },
+            {
+               "value": "83",
+               "period": 2
+            },
+            {
+               "value": "83",
+               "period": 3
+            },
+            {
+               "value": "83",
+               "period": 4
+            },
+            {
+               "value": "83",
+               "period": 5
+            },
+            {
+               "value": "83",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "TotalExpenses",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "350180110",
+               "period": 1
+            },
+            {
+               "value": "360180110",
+               "period": 2
+            },
+            {
+               "value": "370180110",
+               "period": 3
+            },
+            {
+               "value": "380180110",
+               "period": 4
+            },
+            {
+               "value": "390180110",
+               "period": 5
+            },
+            {
+               "value": "400180110",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "SalesAndMarketing",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "350",
+               "period": 1
+            },
+            {
+               "value": "360",
+               "period": 2
+            },
+            {
+               "value": "370",
+               "period": 3
+            },
+            {
+               "value": "380",
+               "period": 4
+            },
+            {
+               "value": "390",
+               "period": 5
+            },
+            {
+               "value": "400",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "RnD",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "180",
+               "period": 1
+            },
+            {
+               "value": "180",
+               "period": 2
+            },
+            {
+               "value": "180",
+               "period": 3
+            },
+            {
+               "value": "180",
+               "period": 4
+            },
+            {
+               "value": "180",
+               "period": 5
+            },
+            {
+               "value": "180",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "GeneralAndAdmin",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "110",
+               "period": 1
+            },
+            {
+               "value": "110",
+               "period": 2
+            },
+            {
+               "value": "110",
+               "period": 3
+            },
+            {
+               "value": "110",
+               "period": 4
+            },
+            {
+               "value": "110",
+               "period": 5
+            },
+            {
+               "value": "110",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "EBITDA",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": -350158198,
+               "period": 1
+            },
+            {
+               "value": null,
+               "period": 2
+            },
+            {
+               "value": null,
+               "period": 3
+            },
+            {
+               "value": null,
+               "period": 4
+            },
+            {
+               "value": null,
+               "period": 5
+            },
+            {
+               "value": null,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "BillingBasedPnL",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": -350179691,
+               "period": 1
+            },
+            {
+               "value": -360179683,
+               "period": 2
+            },
+            {
+               "value": -370179678,
+               "period": 3
+            },
+            {
+               "value": -380179703,
+               "period": 4
+            },
+            {
+               "value": -390179662,
+               "period": 5
+            },
+            {
+               "value": -400179645,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "RawLeadsEnquiries",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 3611,
+               "period": 1
+            },
+            {
+               "value": 3429,
+               "period": 2
+            },
+            {
+               "value": 12133,
+               "period": 3
+            },
+            {
+               "value": 5357,
+               "period": 4
+            },
+            {
+               "value": 4684,
+               "period": 5
+            },
+            {
+               "value": 4400,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ConversionRawLeadsToMQLs",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "1.8",
+               "period": 1
+            },
+            {
+               "value": "2.1",
+               "period": 2
+            },
+            {
+               "value": "1.5",
+               "period": 3
+            },
+            {
+               "value": "1.4",
+               "period": 4
+            },
+            {
+               "value": "1.9",
+               "period": 5
+            },
+            {
+               "value": "2",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "Opportunities",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 65,
+               "period": 1
+            },
+            {
+               "value": 72,
+               "period": 2
+            },
+            {
+               "value": 182,
+               "period": 3
+            },
+            {
+               "value": 75,
+               "period": 4
+            },
+            {
+               "value": 89,
+               "period": 5
+            },
+            {
+               "value": 88,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ConversionOppToWin",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "62",
+               "period": 1
+            },
+            {
+               "value": "58",
+               "period": 2
+            },
+            {
+               "value": "55",
+               "period": 3
+            },
+            {
+               "value": "61",
+               "period": 4
+            },
+            {
+               "value": "54",
+               "period": 5
+            },
+            {
+               "value": "59",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "WinToLossRatio",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "75",
+               "period": 1
+            },
+            {
+               "value": "82",
+               "period": 2
+            },
+            {
+               "value": "65",
+               "period": 3
+            },
+            {
+               "value": "79",
+               "period": 4
+            },
+            {
+               "value": "85",
+               "period": 5
+            },
+            {
+               "value": "78",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "NumFTESalesRep",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "6",
+               "period": 1
+            },
+            {
+               "value": "6.5",
+               "period": 2
+            },
+            {
+               "value": "7",
+               "period": 3
+            },
+            {
+               "value": "7.5",
+               "period": 4
+            },
+            {
+               "value": "8",
+               "period": 5
+            },
+            {
+               "value": "8.5",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "QuotaPerRep",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "4.2",
+               "period": 1
+            },
+            {
+               "value": "4.2",
+               "period": 2
+            },
+            {
+               "value": "4.2",
+               "period": 3
+            },
+            {
+               "value": "4.2",
+               "period": 4
+            },
+            {
+               "value": "4.2",
+               "period": 5
+            },
+            {
+               "value": "4.2",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "SalesCapacity",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 25.2,
+               "period": 1
+            },
+            {
+               "value": 27.3,
+               "period": 2
+            },
+            {
+               "value": 29.4,
+               "period": 3
+            },
+            {
+               "value": 31.5,
+               "period": 4
+            },
+            {
+               "value": 33.6,
+               "period": 5
+            },
+            {
+               "value": 35.7,
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "CoverageRatio",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "1.2",
+               "period": 1
+            },
+            {
+               "value": "1.2",
+               "period": 2
+            },
+            {
+               "value": "1.2",
+               "period": 3
+            },
+            {
+               "value": "1.2",
+               "period": 4
+            },
+            {
+               "value": "1.2",
+               "period": 5
+            },
+            {
+               "value": "1.2",
+               "period": 6
+            }
+         ]
+      },
+      {
+         "name": "ProductivityPerfTE",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": 44,
+               "period": 1
+            },
+            {
+               "value": 42.5,
+               "period": 2
+            },
+            {
+               "value": 42,
+               "period": 3
+            },
+            {
+               "value": 41.6,
+               "period": 4
+            },
+            {
+               "value": 40.5,
+               "period": 5
+            },
+            {
+               "value": 40.9,
+               "period": 6
+            }
+         ]
+      }
+   ]
+}

@@ -13,7 +13,7 @@ function cloner (input, filename) {
 //		console.log('writing data file ' + filename);
 		fs.writeFile(filename, input, function (err) {
 			if (err) { throw err; } 
-//			console.log('saved');
+//			console.log('-watcher- saved');
 		});
 	}
 }
@@ -22,7 +22,7 @@ exports.watcher = function () {
 	var fs = require('fs');
 // handle data files	
 	fs.watch('./server/public/data/dropbox/', function(event, filename){
-		console.log(filename + " just changed and will be copied to private");		
+		console.log("-watcher- "+ filename + " just changed and will be copied to private");		
 		console.log('event is: ' + event);
 		if (event === 'change'){
 			if (filename) {
@@ -37,13 +37,13 @@ exports.watcher = function () {
 					}
 				});
 			} else {
-				console.log('filename not provided');
+				console.log('-watcher- filename not provided');
 			}
 		}
 	});
 //	handle profile files
 	fs.watch('./server/public/data/dropbox/reportProfiles/', function(event, filename){
-		console.log(filename + " just changed and will be copied to private");
+		console.log("-watcher- "+ filename + " just changed and will be copied to private");
 
 		console.log('event is: ' + event);
 		if (event === 'change'){
@@ -59,12 +59,12 @@ exports.watcher = function () {
 					}
 				});
 			} else {
-				console.log('filename not provided');
+				console.log('-watcher- filename not provided');
 			}
 		}
 
 	});
-	console.log("Now watching server/public/data/dropbox/ and dropbox/reportProfiles for changes...");
+	console.log("-watcher- Now watching server/public/data/dropbox/ and dropbox/reportProfiles for changes...");
 
 };
 

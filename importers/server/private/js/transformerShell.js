@@ -201,10 +201,10 @@ function produceReportPage( outputPath, profileJSON){
 
 	var fs = require('fs');
 	var target = outputPath + htmlFile;
-//	console.log('writing html file ' + target);
+//	console.log('-transformerShell- writing html file ' + target);
 	fs.writeFile(target, fileString, function (err) {
 		if (err) { throw err; } 
-//		console.log('saved');
+//		console.log('-transformerShell- saved');
 	});
 }
 /*
@@ -255,26 +255,26 @@ function produceDataFile (input, outputDataPath, outputHtmlPath, profileJSON) {
 
 	// write html Data file 
 	// write contents to viewer data source directory
-//	console.log('writing html data file ' + htmlDataFile);
+//	console.log('-transformerShell- writing html data file ' + htmlDataFile);
 	fs.writeFile(htmlDataFile, htmlDataTable, function (err) {
 		if (err) { throw err; } 
-//		console.log('saved');
+//		console.log('-transformerShell- saved');
 	});
 
 	// stringify outputJSON 
 	var output = JSON.stringify(outputArray, null, 3);
 	if (output) {
 		// write contents to viewer data source directory
-//		console.log('writing data file ' + dataTarget);
+//		console.log('-transformerShell- writing data file ' + dataTarget);
 		fs.writeFile(dataTarget, output, function (err) {
 			if (err) { throw err; } 
-//			console.log('saved');
+//			console.log('-transformerShell- saved');
 		});
 	}
 }
 function processProfile (data, profile, outputHtmlPath, outputDataPath){
 	var fs = require('fs');
-	console.log("runing profile: "+ profile);
+	console.log("-transformerShell- runing profile: "+ profile);
 	var profileData;
 	fs.readFile(profile, function (err, profileData) {
 		if (err) {
@@ -316,7 +316,7 @@ exports.watcher = function () {
 				var builder = require('./FullAnnualContractInputBuilder.js');
 				// write data and html to viewer source directory
 				var targetDataTableDir = './server/private/html/dataTables/';
-				var outputHtmlData = builder.generateHtmlFromJSON(JSON.parse(data));		
+				var outputHtmlData = builder.generateHtmlFromJSON(JSON.parse(data), "http:\/\/localhost:10000\/fullAnnualContract\/");		
 //				console.log('writing full set html data file ' + filename);
 				fs.writeFile(targetDataTableDir + "fullAnnualContractData.html", outputHtmlData, function (err) {
 					if (err) { throw err; } 
@@ -327,7 +327,7 @@ exports.watcher = function () {
 			}
 		});
 	});
-	console.log("Now watching " +filename+ " for changes...");
+	console.log("-transformerShell- Now watching " +filename+ " for changes...");
 
 };
 

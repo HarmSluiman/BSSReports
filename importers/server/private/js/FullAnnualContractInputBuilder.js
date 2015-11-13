@@ -16,7 +16,7 @@ function initValue (inputArray, index){
 	inputArray[index] = {value:'', period:''};
 }
 
-exports.generateHtmlFromJSON = function (inputJSON){
+exports.generateHtmlFromJSON = function (inputJSON, targetURL){
 	var htmlDataTable = "";
 	// one row for each value set
 	htmlDataTable = 
@@ -85,7 +85,7 @@ exports.generateHtmlFromJSON = function (inputJSON){
 		"      // if there was no bad data 																			\n"+
 		"      if (messageString === '') { 																			\n"+
 		"      // postTable('http://localhost:10000/fullAnnualContract/', JSON.stringify(outputJSON, null, 3));  	\n"+
-		"      	  postTable('http://localhost:10000/fullAnnualContract/', outputJSON);  							\n"+
+		"      	  postTable('"+ targetURL+ "', outputJSON);  							\n"+
 		"      } 																									\n"+
 		"       																									\n"+
 		"	     			\n"+
@@ -219,7 +219,7 @@ exports.build = function (inputJSON, outputJSON) {
 		D59, D60, D64, D65, D66, D70, D71, D72, D73, D74, D77, D78, D79, D80, D82;
 	
 	if (inputJSON) {
-		console.log("Building full AnnualContractInput.");
+		console.log("-FullAnnualContractInputBuilder- Building full AnnualContractInput.");
 		// create JSON output structure
 		var i;
 		
@@ -764,7 +764,7 @@ exports.build = function (inputJSON, outputJSON) {
 		
 
 	} else {
-		console.log("no input JSON provided to builder");
+		console.log("-FullAnnualContractInputBuilder- no input JSON provided to builder");
 	}
 	
 
