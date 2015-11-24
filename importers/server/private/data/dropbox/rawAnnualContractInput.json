@@ -1,0 +1,764 @@
+{
+   "label": "AnnualContractInput",
+   "items": [
+      {
+         "name": "Bookings",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "264",
+               "period": "1"
+            },
+            {
+               "value": "276",
+               "period": "2"
+            },
+            {
+               "value": "294",
+               "period": "3"
+            },
+            {
+               "value": "312",
+               "period": "4"
+            },
+            {
+               "value": "324",
+               "period": "5"
+            },
+            {
+               "value": "348",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "AverageContractTerm",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "1.3",
+               "period": "1"
+            },
+            {
+               "value": "1.4",
+               "period": "2"
+            },
+            {
+               "value": "1.4",
+               "period": "3"
+            },
+            {
+               "value": "1.5",
+               "period": "4"
+            },
+            {
+               "value": "1.4",
+               "period": "5"
+            },
+            {
+               "value": "1.6",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "AverageMonthsPrepaid",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "5.5",
+               "period": "1"
+            },
+            {
+               "value": "7",
+               "period": "2"
+            },
+            {
+               "value": "5",
+               "period": "3"
+            },
+            {
+               "value": "6.5",
+               "period": "4"
+            },
+            {
+               "value": "5.8",
+               "period": "5"
+            },
+            {
+               "value": "6.2",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "NewACV",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "264",
+               "period": "1"
+            },
+            {
+               "value": "276",
+               "period": "2"
+            },
+            {
+               "value": "294",
+               "period": "3"
+            },
+            {
+               "value": "312",
+               "period": "4"
+            },
+            {
+               "value": "324",
+               "period": "5"
+            },
+            {
+               "value": "348",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "EndingARR",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "4987",
+               "period": "1"
+            },
+            {
+               "value": "5158",
+               "period": "2"
+            },
+            {
+               "value": "5370",
+               "period": "3"
+            },
+            {
+               "value": "5591",
+               "period": "4"
+            },
+            {
+               "value": "5892",
+               "period": "5"
+            },
+            {
+               "value": "6175",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "TotalNumCustomers",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "808",
+               "period": "1"
+            },
+            {
+               "value": "825",
+               "period": "2"
+            },
+            {
+               "value": "845",
+               "period": "3"
+            },
+            {
+               "value": "866",
+               "period": "4"
+            },
+            {
+               "value": "890",
+               "period": "5"
+            },
+            {
+               "value": "916",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "NumberNewCustomers",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "40",
+               "period": "1"
+            },
+            {
+               "value": "42",
+               "period": "2"
+            },
+            {
+               "value": "43",
+               "period": "3"
+            },
+            {
+               "value": "46",
+               "period": "4"
+            },
+            {
+               "value": "48",
+               "period": "5"
+            },
+            {
+               "value": "52",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "NumberChurnedCustomers",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "-24",
+               "period": "1"
+            },
+            {
+               "value": "-25",
+               "period": "2"
+            },
+            {
+               "value": "-23",
+               "period": "3"
+            },
+            {
+               "value": "-25",
+               "period": "4"
+            },
+            {
+               "value": "-24",
+               "period": "5"
+            },
+            {
+               "value": "-26",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "PercentACVChurn",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "2.1",
+               "period": "1"
+            },
+            {
+               "value": "2.7",
+               "period": "2"
+            },
+            {
+               "value": "2.1",
+               "period": "3"
+            },
+            {
+               "value": "2",
+               "period": "4"
+            },
+            {
+               "value": "1.9",
+               "period": "5"
+            },
+            {
+               "value": "1.8",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "PercentACVExpansion",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "0.5",
+               "period": "1"
+            },
+            {
+               "value": "0.6",
+               "period": "2"
+            },
+            {
+               "value": "0.5",
+               "period": "3"
+            },
+            {
+               "value": "0.3",
+               "period": "4"
+            },
+            {
+               "value": "1.5",
+               "period": "5"
+            },
+            {
+               "value": "0.7",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "CustomerEngagementScore",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "121",
+               "period": "1"
+            },
+            {
+               "value": "120",
+               "period": "2"
+            },
+            {
+               "value": "125",
+               "period": "3"
+            },
+            {
+               "value": "126",
+               "period": "4"
+            },
+            {
+               "value": "130",
+               "period": "5"
+            },
+            {
+               "value": "135",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "NetPromoterScore",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "28",
+               "period": "1"
+            },
+            {
+               "value": "27",
+               "period": "2"
+            },
+            {
+               "value": "29",
+               "period": "3"
+            },
+            {
+               "value": "32",
+               "period": "4"
+            },
+            {
+               "value": "33",
+               "period": "5"
+            },
+            {
+               "value": "35",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "CurrentMonthInvoicing",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "505",
+               "period": "1"
+            },
+            {
+               "value": "515",
+               "period": "2"
+            },
+            {
+               "value": "520",
+               "period": "3"
+            },
+            {
+               "value": "490",
+               "period": "4"
+            },
+            {
+               "value": "540",
+               "period": "5"
+            },
+            {
+               "value": "560",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "GrossMarginPercent",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "83",
+               "period": "1"
+            },
+            {
+               "value": "83",
+               "period": "2"
+            },
+            {
+               "value": "83",
+               "period": "3"
+            },
+            {
+               "value": "83",
+               "period": "4"
+            },
+            {
+               "value": "83",
+               "period": "5"
+            },
+            {
+               "value": "83",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "SalesAndMarketingExpense",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "350",
+               "period": "1"
+            },
+            {
+               "value": "360",
+               "period": "2"
+            },
+            {
+               "value": "370",
+               "period": "3"
+            },
+            {
+               "value": "380",
+               "period": "4"
+            },
+            {
+               "value": "390",
+               "period": "5"
+            },
+            {
+               "value": "400",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "RnDExpense",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "180",
+               "period": "1"
+            },
+            {
+               "value": "180",
+               "period": "2"
+            },
+            {
+               "value": "180",
+               "period": "3"
+            },
+            {
+               "value": "180",
+               "period": "4"
+            },
+            {
+               "value": "180",
+               "period": "5"
+            },
+            {
+               "value": "180",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "GeneralAdminExpense",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "110",
+               "period": "1"
+            },
+            {
+               "value": "110",
+               "period": "2"
+            },
+            {
+               "value": "110",
+               "period": "3"
+            },
+            {
+               "value": "110",
+               "period": "4"
+            },
+            {
+               "value": "110",
+               "period": "5"
+            },
+            {
+               "value": "110",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "ConversionLeadsToMQLs",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "1.8",
+               "period": "1"
+            },
+            {
+               "value": "2.1",
+               "period": "2"
+            },
+            {
+               "value": "1.5",
+               "period": "3"
+            },
+            {
+               "value": "1.4",
+               "period": "4"
+            },
+            {
+               "value": "1.9",
+               "period": "5"
+            },
+            {
+               "value": "2",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "ConversionOpsToWins",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "62",
+               "period": "1"
+            },
+            {
+               "value": "58",
+               "period": "2"
+            },
+            {
+               "value": "55",
+               "period": "3"
+            },
+            {
+               "value": "61",
+               "period": "4"
+            },
+            {
+               "value": "54",
+               "period": "5"
+            },
+            {
+               "value": "59",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "WinLossRatio",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "75",
+               "period": "1"
+            },
+            {
+               "value": "82",
+               "period": "2"
+            },
+            {
+               "value": "65",
+               "period": "3"
+            },
+            {
+               "value": "200",
+               "period": "4"
+            },
+            {
+               "value": "85",
+               "period": "5"
+            },
+            {
+               "value": "78",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "NumberFTEReps",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "6",
+               "period": "1"
+            },
+            {
+               "value": "6.5",
+               "period": "2"
+            },
+            {
+               "value": "7",
+               "period": "3"
+            },
+            {
+               "value": "7.5",
+               "period": "4"
+            },
+            {
+               "value": "8",
+               "period": "5"
+            },
+            {
+               "value": "8.5",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "QuotaPerFTE",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "4.2",
+               "period": "1"
+            },
+            {
+               "value": "4.2",
+               "period": "2"
+            },
+            {
+               "value": "4.2",
+               "period": "3"
+            },
+            {
+               "value": "4.2",
+               "period": "4"
+            },
+            {
+               "value": "4.2",
+               "period": "5"
+            },
+            {
+               "value": "4.2",
+               "period": "6"
+            }
+         ]
+      },
+      {
+         "name": "CoverageRatio",
+         "values": [
+            {
+               "value": 0,
+               "period": 0
+            },
+            {
+               "value": "1.2",
+               "period": "1"
+            },
+            {
+               "value": "1.2",
+               "period": "2"
+            },
+            {
+               "value": "1.2",
+               "period": "3"
+            },
+            {
+               "value": "1.2",
+               "period": "4"
+            },
+            {
+               "value": "1.2",
+               "period": "5"
+            },
+            {
+               "value": "1.2",
+               "period": "6"
+            }
+         ]
+      }
+   ]
+}

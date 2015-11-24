@@ -1,0 +1,51 @@
+Your customer makes a request to the 3scale API gateway.
+https://api-2445581381528.apicast.io:443/method?user_key=6e844d57ff8e8f721e82cf8ba7556aaa
+3scale handles authentication & rate limiting according to your rules.
+https://api.sluiman-inc.com/method
+Your API returns the response to the customer through the gateway. 
+
+aaSReports
+
+API
+
+    Private Base URL* https://echo-api.3scale.net:443
+
+    Private address of your API that will be called by the API gateway.
+    Questionpassive
+
+API gateway
+
+    Public Base URL* https://api-2445581381528.staging.apicast.io:443
+
+    Public address of your API gateway in the staging environment. You can use this address to call the API for testing purposes.
+    Questionpassive
+    Mapping Rules
+    Authentication Settings
+
+Client
+
+    Questionpassive
+    API test GET request /public/html/index.html
+
+    Optional GET request to a API gateway endpoint. We will use this call to validate your API gateway setup using credentials of the first live application. You can try it yourself by copying the following command into your shell:
+
+    curl "https://api-2445581381528.staging.apicast.io:443/public/html/index.html?user_key=6e844d57ff8e8f721e82cf8ba7556aaa"
+
+
+    Connection between client, gateway & API is working correctly as reflected on the stats page.
+
+Production
+cloud API gateway
+
+The APIcast production environment has the same configuration as the staging environment. The public endpoint is different and it's running in a production environment
+
+API
+
+    Private Base URL
+
+API gateway
+
+    Public Base URL
+
+Client
+

@@ -16,6 +16,7 @@ function processPost(request, response, callback) {
     if(request.method === 'POST') {
         request.on('data', function(data) {
             queryData += data;
+            // kill this request if it is a flooding attack
             if(queryData.length > 1e6) {
                 queryData = "";
                 response.writeHead(413, {'Content-Type': 'text/plain'}).end();
@@ -57,7 +58,7 @@ var serviceServer = http.createServer(function(request, response) {
     // the end event tells you that you have entire body
 	var data;
     request.on('end', function () {
-    	console.log(body);
+//    	console.log(body);
 
       try {
         data = JSON.parse(body);
@@ -75,36 +76,70 @@ var serviceServer = http.createServer(function(request, response) {
     
 	console.log("request method: " + request.method);
 	var fs = require('fs');
-	var filename = 'fullAnnualContractInput.json';
+	var filename = 'AnnualContractInput.json';
 	var targetdir = './server/private/data/viewdata/fullset/';
-
+/* There are 3 post requests supported at this time:
+ * /public/data/dropbox/
+ * 		This is intended for a fresh input of data  and will be processed to create a full set of
+ *  	data set files as viewdata to feed each report 
+ * /rawAnnualContract/ 
+ * 		Raw data is a convenience url that is used by a browser to have the same effect as dropbox
+ * 		without altering the original input file. This is a user interaction to adjust previous
+ * 		input data. So it is processed like dropbox but without updating the public/dropbox file.
+ * /fullAnnualContract/
+ * 		All inputs are merged into or used to create the fullAnnualContact data set which is the
+ * 		input data plus any registered derivations needed to populate the report viewdata data sets.
+ *
+ * All other requests are ignored
+ * 
+ */
     
 	if(request.method === 'POST') {
         processPost(request, response, function() {
             //console.log(JSON.stringify(request.post, null, 3));
         	//console.log(request.headers);
         	console.log(request.url);
-        	fs.writeFile("dump.json", JSON.stringify(data, null, 3), function (err) {
-        		if (err) { throw err; } 
-        		if (request.url === '/fullAnnualContract/'){
-        			// write fullset contents to viewer data source directory
-//        			console.log('writing full set data file ' + filename);
-        			fs.writeFile(targetdir + filename, JSON.stringify(data, null, 3), function (err) {
-        				if (err) { throw err; } 
-//        					console.log(' data saved');
-        			});
-        		}
-        		console.log('dumped post data to dump.json');
-        	});
+//       	fs.writeFile("dump.json", JSON.stringify(data, null, 3), function (err) {
+//        		if (err) { throw err; } 
+//    			console.log('dumped post data to dump.json');
+//    		});
+        	// handle input that will not drive recalculation
+        	if (request.url === '/fullAnnualContract/'){
+        		// write input contents to viewer data source directory
+//        		console.log('writing input data set data file full' + filename);
+        		fs.writeFile(targetdir + 'full' + filename, JSON.stringify(data, null, 3), function (err) {
+        			if (err) { throw err; } 
+        			console.log('input full set data saved');
+        		});
+        	}
+        	if (request.url === '/rawAnnualContract/'){
+        		// write input contents to viewer data source directory
+//        			console.log('writing input data set data file raw' + filename);
+        		fs.writeFile("./server/private/data/dropbox/" + 'raw' + filename, JSON.stringify(data, null, 3), function (err) {
+        			if (err) { throw err; } 
+        			console.log('input raw set data saved to private dropbox');
+        		});
+        	}
+
+        	if (request.url === '/public/data/dropbox/'){
+        		// write input contents to viewer data source directory
+//        			console.log('writing input data set data file full' + filename );
+        		fs.writeFile( './server/private/data/dropbox/' + filename, JSON.stringify(data, null, 3), function (err) {
+        			if (err) { throw err; } 
+        			console.log('input saved to drop box');
+        		});
+        	}
 
         	
         	
         	//var postJSON= JSON.parse(request.post);
+        	// respond with appropriate code
             response.writeHead(200, "OK", {'Content-Type': 'text/plain'});
            
             response.end();
         });
     } else {
+    	// just swallow all other http requests
         response.writeHead(200, "OK", {'Content-Type': 'text/plain'});
         response.end();
     }
@@ -130,7 +165,7 @@ transformer.watcher();
 var importer = require('./server/private/js/importer.js');
 importer.watcher();
 
-//monitor for input dropbox files and move to private area
+//monitor for public input dropbox files and move to private area
 var monitor = require('./server/private/js/watcher.js');
 monitor.watcher();
 

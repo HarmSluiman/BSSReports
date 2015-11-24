@@ -1,9 +1,11 @@
 /*
  * Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.
  * 
- *	The role of the importer is to take an input xcel or json file and 
- * 	convert/merge the data into the various view data files for rendering
- * Also generate a basic html table to render the raw full data set.
+ *	The role of the FullAnnulaCOntractBuilder is to take an input json file and 
+ * 	convert/merge the data into a ssingle data source that will be processed 
+ *  downstream based on the profiles that have been provided for each report.
+ *  
+ *  Also generate a basic html table to render the raw full data set.
  */
 function cloner (input, filename) {
 
@@ -15,7 +17,10 @@ function initItem (inputArray, index) {
 function initValue (inputArray, index){
 	inputArray[index] = {value:'', period:''};
 }
-
+/*
+ * generateHtmlFromJSON produces a generic html table for 
+ * editing and resubmitting the provided table of json data
+ */
 exports.generateHtmlFromJSON = function (inputJSON, targetURL){
 	var htmlDataTable = "";
 	// one row for each value set
@@ -95,7 +100,7 @@ exports.generateHtmlFromJSON = function (inputJSON, targetURL){
 		"					\n"+
 		"<p>Submitting updated data from here will feed your raw input and regenerate \n"+
 		"the reports without any derived calculations. To provide new base data and allow \n"+
-		"derived calculations, please submit new base data <a href='/html/NotImplementedYet.html'> here</a>.</p>\n"+
+		"derived calculations, please submit new base data <a href='/public/html/NotImplementedYet.html'> here</a>.</p>\n"+
 		"							\n"+
 		"<button					\n"+
 		"	onclick='sendJSON()'> 	\n"+
@@ -109,8 +114,15 @@ exports.generateHtmlFromJSON = function (inputJSON, targetURL){
 	// use first object as template for all columns
 	var i;
 	var j;
+	var period;
 	for (i=1; i<inputJSON.items[0].values.length; i++){
-		htmlDataTable = htmlDataTable + " <th>" + inputJSON.items[0].values[i].period + "</th> ";
+		// if the period is not provided then use sequential numbers
+		if (inputJSON.items[0].values[i].period === undefined) {
+			period = i;
+		}else{
+			period = inputJSON.items[0].values[i].period;
+		}
+		htmlDataTable = htmlDataTable + " <th>" + period + "</th> ";
 	}
 	htmlDataTable = htmlDataTable + "</tr> \n";
 		

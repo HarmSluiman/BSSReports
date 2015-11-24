@@ -1,8 +1,10 @@
 /*
  * Copyright 2015 by Harm Sluiman. All rights reserved. This material may not be duplicated without written permission.
  * 
- *	The role of the importer is to take an input xcel or json file and 
- * 	process them into the data into the various view data files for rendering
+ *	The role of the importer is to take an input xcel or json file found in the private dropbox 
+ *  and and send for processing into consumable input for the downstream profiles.
+ *  the builder does the consolidation, and importer creates an html file for editing the 
+ *  most recent input json.
  */
 function cloner (input, filename) {
 	var fs = require('fs');
@@ -21,7 +23,7 @@ function cloner (input, filename) {
 		builder.build(inputJSON, outputJSON);		
 		// write fullset contents to viewer data source directory
 //		console.log('-importer- writing full set data file ' + filename);
-		fs.writeFile(targetdir + "full" + filename, JSON.stringify(outputJSON, null, 3), function (err) {
+		fs.writeFile(targetdir + "fullAnnualContractInput.json" , JSON.stringify(outputJSON, null, 3), function (err) {
 			if (err) { throw err; } 
 //			console.log('-importer-  data saved');
 		});
